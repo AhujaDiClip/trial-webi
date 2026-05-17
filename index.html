@@ -1,55 +1,76 @@
 <!DOCTYPE html>
-<html lang="en" class="scroll-smooth">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Cheshta Saluja - Interactive Tactical CV. Advocate & Marksman.">
+    <title>Cheshta Saluja - Classified Dossier</title>
     
-    <!-- SEO & Social Meta Tags -->
-    <meta name="description" content="Sky Is to Fly: The School of Quantum Healing by Captain Poonam Kaur. Heal childhood trauma, twin flame dynamics, and reclaim your power.">
-    <meta name="keywords" content="Quantum Healing, Twin Flame Healing, Timeline Trauma, Spiritual Awakening, Ancestral Healing, Poonam Kaur">
-    <meta property="og:title" content="Sky Is to Fly | School of Quantum Healing">
-    <meta property="og:description" content="From Trauma to Truth, From Pain to Power. Step into a life of clarity and profound peace.">
-    <meta property="og:type" content="website">
-    <meta property="og:image" content="https://images.unsplash.com/photo-1534447677768-be436bb09401?q=80&w=1200&auto=format&fit=crop">
-    <meta name="theme-color" content="#0a0b16">
-    
-    <title>Sky Is to Fly | The School of Quantum Healing</title>
-    
-    <!-- Tailwind CSS -->
+    <!-- Load Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
     
-    <!-- Google Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
-    
-    <!-- Phosphor Icons -->
+    <!-- Load Phosphor Icons -->
     <script src="https://unpkg.com/@phosphor-icons/web"></script>
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
 
-    <!-- Tailwind Configuration -->
     <script>
         tailwind.config = {
             theme: {
                 extend: {
-                    colors: {
-                        deep: {
-                            900: '#0a0b16',
-                            800: '#13152c',
-                            700: '#1d2040',
-                        },
-                        gold: {
-                            400: '#d4af37',
-                            500: '#b5952f',
-                        },
-                        ethereal: '#8b5cf6'
-                    },
                     fontFamily: {
-                        serif: ['Cinzel', 'serif'],
-                        sans: ['Montserrat', 'sans-serif'],
+                        sans: ['Inter', 'sans-serif'],
+                        serif: ['Playfair Display', 'serif'],
+                        mono: ['JetBrains Mono', 'monospace'],
                     },
-                    backgroundImage: {
-                        'hero-pattern': "url('https://images.unsplash.com/photo-1534447677768-be436bb09401?q=80&w=2094&auto=format&fit=crop')",
-                        'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
+                    colors: {
+                        zinc: {
+                            50: '#fafafa', 100: '#f4f4f5', 200: '#e4e4e7', 300: '#d4d4d8',
+                            400: '#a1a1aa', 500: '#71717a', 600: '#52525b', 700: '#3f3f46',
+                            800: '#27272a', 900: '#18181b', 950: '#09090b',
+                        },
+                        archival: {
+                            dark: '#0c0d10',
+                            paper: '#14161a',
+                            ink: '#b91c1c' /* Faded dried blood/ink red */
+                        }
+                    },
+                    animation: {
+                        'spin-slow': 'spin 6s linear infinite',
+                        'bounce-subtle': 'subtleBounce 2s ease-in-out infinite',
+                        'flash': 'flash 0.1s ease-out forwards',
+                        'fade-out': 'fadeOut 2s ease-out forwards',
+                        'slide-up': 'slideUp 0.4s ease-out forwards',
+                        'fadeIn': 'fadeIn 0.2s ease-out forwards',
+                        'pulse-glow': 'pulseGlow 2s ease-in-out infinite',
+                    },
+                    keyframes: {
+                        pulseGlow: {
+                            '0%, 100%': { boxShadow: '0 0 5px rgba(185,28,28,0.2)', borderColor: 'rgba(185,28,28,0.5)' },
+                            '50%': { boxShadow: '0 0 20px rgba(185,28,28,0.8)', borderColor: 'rgba(185,28,28,1)' }
+                        },
+                        subtleBounce: {
+                            '0%, 100%': { transform: 'translateY(0)' },
+                            '50%': { transform: 'translateY(-3px)' }
+                        },
+                        flash: {
+                            '0%': { transform: 'scale(0.5)', opacity: '1' },
+                            '100%': { transform: 'scale(2.5)', opacity: '0' }
+                        },
+                        fadeOut: {
+                            '0%': { opacity: '1', transform: 'scale(1)' },
+                            '10%': { transform: 'scale(1.1)' },
+                            '100%': { opacity: '0', transform: 'scale(0.9)' }
+                        },
+                        slideUp: {
+                            'from': { opacity: '0', transform: 'translateY(20px)' },
+                            'to': { opacity: '1', transform: 'translateY(0)' }
+                        },
+                        fadeIn: {
+                            'from': { opacity: '0', transform: 'translateY(10px)' },
+                            'to': { opacity: '1', transform: 'translateY(0)' }
+                        }
                     }
                 }
             }
@@ -58,1407 +79,693 @@
 
     <style>
         body {
-            background-color: #0a0b16;
-            color: #f8fafc;
-        }
-
-        /* Ethereal Glowing Effects */
-        .glow-text {
-            text-shadow: 0 0 20px rgba(212, 175, 55, 0.4);
+            background-color: #0c0d10;
+            color: #e2e8f0;
+            overflow-x: hidden;
+            cursor: none; 
         }
         
-        .card-glow {
-            transition: all 0.4s ease;
-        }
-        .card-glow:hover {
-            box-shadow: 0 0 30px rgba(139, 92, 246, 0.2);
-            transform: translateY(-5px);
-            border-color: rgba(212, 175, 55, 0.4);
-        }
-
-        /* Custom Animations */
-        @keyframes float {
-            0% { transform: translateY(0px); }
-            50% { transform: translateY(-10px); }
-            100% { transform: translateY(0px); }
-        }
-        
-        .animate-float {
-            animation: float 6s ease-in-out infinite;
+        /* Archival Noise Overlay for Old Document Vibe */
+        .noise-overlay {
+            position: fixed;
+            top: 0; left: 0; width: 100%; height: 100%;
+            pointer-events: none;
+            z-index: 1;
+            opacity: 0.04;
+            background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
         }
 
-        @keyframes fade-in-up {
-            0% { opacity: 0; transform: translateY(20px); }
-            100% { opacity: 1; transform: translateY(0); }
+        /* Hide scrollbar but allow scrolling */
+        ::-webkit-scrollbar { width: 8px; }
+        ::-webkit-scrollbar-track { background: #09090b; }
+        ::-webkit-scrollbar-thumb { background: #3f3f46; border-radius: 4px; }
+        ::-webkit-scrollbar-thumb:hover { background: #b91c1c; }
+
+        /* Focus Mode Styles */
+        body.focus-mode {
+            background-color: #050505;
+            color: #cbd5e1;
         }
 
-        .fade-in-element {
+        /* Government Stamp Animation - Dried Ink Look */
+        @keyframes stamp-in {
+            0% { opacity: 0; transform: scale(3) rotate(-25deg); }
+            50% { opacity: 1; transform: scale(0.9) rotate(-15deg); }
+            100% { opacity: 0.85; transform: scale(1) rotate(-15deg); } /* Slightly faded */
+        }
+        .stamp-declassified {
+            animation: stamp-in 0.5s cubic-bezier(0.25, 1, 0.5, 1) forwards;
+            animation-delay: 1.2s; 
             opacity: 0;
-            transform: translateY(20px);
-            transition: opacity 0.8s ease-out, transform 0.8s ease-out;
-        }
-
-        .fade-in-element.visible {
-            opacity: 1;
-            transform: translateY(0);
-        }
-
-        /* Glassmorphism */
-        .glass-panel {
-            background: rgba(19, 21, 44, 0.6);
-            backdrop-filter: blur(12px);
-            -webkit-backdrop-filter: blur(12px);
-            border: 1px solid rgba(255, 255, 255, 0.05);
+            mix-blend-mode: screen; /* Helps look like ink on dark paper */
         }
         
-        .military-border {
-            position: relative;
+        /* Redacted Text Styles */
+        .redacted {
+            background-color: #18181b; 
+            color: transparent;
+            border-radius: 2px;
+            transition: all 0.3s ease;
+            cursor: pointer;
+            padding: 0 4px;
+            background-image: repeating-linear-gradient(45deg, transparent, transparent 2px, rgba(255,255,255,0.05) 2px, rgba(255,255,255,0.05) 4px);
         }
-        .military-border::before {
-            content: '';
-            position: absolute;
-            top: 0; left: 0; right: 0; bottom: 0;
-            border: 1px solid rgba(212, 175, 55, 0.3);
-            margin: 4px;
-            pointer-events: none;
+        .redacted:hover {
+            background-color: #27272a;
         }
-
-        /* Healing Orbs & Love Animations */
-        @keyframes heartbeat {
-            0%, 100% { transform: scale(1); }
-            15% { transform: scale(1.2); }
-            30% { transform: scale(1); }
-            45% { transform: scale(1.2); }
-            60% { transform: scale(1); }
-        }
-        .animate-heartbeat {
-            animation: heartbeat 2.5s infinite ease-in-out;
-            transform-origin: center;
+        .redacted.revealed {
+            background-color: transparent;
+            color: #b91c1c;
+            background-image: none;
         }
 
-        .healing-orb {
-            position: absolute;
-            border-radius: 50%;
-            background: radial-gradient(circle, rgba(212,175,55,0.3) 0%, rgba(139,92,246,0.1) 100%);
-            filter: blur(15px);
-            animation: float-up 15s infinite linear;
-            pointer-events: none;
-            z-index: 5;
+        ::selection {
+            background-color: rgba(185, 28, 28, 0.3);
+            color: #fecaca;
         }
 
-        @keyframes float-up {
-            0% { transform: translateY(100vh) scale(0.5); opacity: 0; }
-            20% { opacity: 0.6; }
-            80% { opacity: 0.6; }
-            100% { transform: translateY(-20vh) scale(1.5); opacity: 0; }
+        .skill-segment {
+            transition: all 0.3s ease;
         }
+        
+        .tab-content { display: none; }
+        .tab-content.active { display: block; animation: slideUp 0.4s ease-out forwards; }
 
-        /* Shimmer Button Effect */
-        .btn-shimmer {
-            position: relative;
-            overflow: hidden;
+        /* Legal Double Border */
+        .legal-border {
+            border: 4px double #3f3f46;
         }
-        .btn-shimmer::after {
-            content: '';
-            position: absolute;
-            top: -50%;
-            left: -50%;
-            width: 200%;
-            height: 200%;
-            background: linear-gradient(to right, rgba(255,255,255,0) 0%, rgba(255,255,255,0.3) 50%, rgba(255,255,255,0) 100%);
-            transform: rotate(30deg);
-            animation: shimmer 3s infinite linear;
-        }
-        @keyframes shimmer {
-            0% { transform: translateX(-100%) rotate(30deg); }
-            100% { transform: translateX(100%) rotate(30deg); }
-        }
-
-        /* Interactive Elements */
-        .aura-cursor {
-            position: fixed;
-            top: 0; left: 0;
-            width: 30px; height: 30px;
-            border: 2px solid rgba(212, 175, 55, 0.6);
-            border-radius: 50%;
-            pointer-events: none;
-            transform: translate(-50%, -50%);
-            transition: width 0.3s ease, height 0.3s ease, background-color 0.3s ease, border-color 0.3s ease;
-            z-index: 9999;
-            mix-blend-mode: screen;
-        }
-        .aura-cursor.active {
-            width: 60px; height: 60px;
-            background-color: rgba(139, 92, 246, 0.2);
-            border-color: rgba(139, 92, 246, 0.8);
-        }
-        .aura-dot {
-            position: fixed;
-            top: 0; left: 0;
-            width: 6px; height: 6px;
-            background-color: #d4af37;
-            border-radius: 50%;
-            pointer-events: none;
-            transform: translate(-50%, -50%);
-            z-index: 10000;
-            transition: opacity 0.3s;
-        }
-        @media (min-width: 1024px) {
-            body { cursor: none; }
-            a, button, .modal-trigger { cursor: none !important; }
-        }
-
-        .ripple {
-            position: absolute;
-            border-radius: 50%;
-            transform: scale(0);
-            animation: ripple-animation 0.6s linear;
-            background-color: rgba(255, 255, 255, 0.4);
-            pointer-events: none;
-            z-index: 10;
-        }
-        @keyframes ripple-animation {
-            to { transform: scale(4); opacity: 0; }
-        }
-
-        /* NEW: Scroll Progress Indicator */
-        #scroll-progress {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 4px;
-            background: linear-gradient(to bottom, #8b5cf6, #d4af37, #ffffff);
-            height: 0%;
-            z-index: 999999;
-            box-shadow: 0 0 15px rgba(212, 175, 55, 0.8), 0 0 5px rgba(139, 92, 246, 0.8);
-            transition: height 0.1s ease-out;
-            border-radius: 0 0 2px 0;
+        .legal-border-active {
+            border: 4px double #b91c1c;
         }
     </style>
 </head>
-<body class="font-sans antialiased selection:bg-gold-500 selection:text-white">
+<body class="transition-colors duration-1000 antialiased selection:bg-red-900/40 selection:text-red-200" id="app-body">
     
-    <!-- Energy Scroll Progress -->
-    <div id="scroll-progress"></div>
+    <!-- Gritty Paper Overlay -->
+    <div class="noise-overlay"></div>
 
-    <!-- Custom Aura Cursor -->
-    <div id="aura-cursor" class="aura-cursor hidden lg:block"></div>
-    <div id="aura-dot" class="aura-dot hidden lg:block"></div>
-
-    <nav id="navbar" class="fixed w-full z-50 transition-all duration-300 py-4">
-        <div class="max-w-7xl mx-auto px-6 md:px-12 flex justify-between items-center">
-            <a href="#" onclick="switchPage('home')" class="font-serif text-2xl font-bold tracking-widest text-white flex items-center gap-2">
-                <i class="ph ph-sparkle text-gold-400"></i>
-                SKY IS TO FLY
-            </a>
-            
-            <!-- Desktop Menu -->
-            <div class="hidden md:flex gap-8 text-sm uppercase tracking-widest font-medium">
-                <a href="#mission" onclick="switchPage('home')" class="hover:text-gold-400 transition-colors">Mission</a>
-                <a href="#founder" onclick="switchPage('home')" class="hover:text-gold-400 transition-colors">Founder</a>
-                <a href="#modalities" onclick="switchPage('home')" class="hover:text-gold-400 transition-colors">Modalities</a>
-                <a href="#courses" onclick="switchPage('home')" class="hover:text-gold-400 transition-colors">Courses</a>
-                <a href="#" onclick="switchPage('shop')" class="hover:text-ethereal transition-colors relative group">
-                    Shop
-                    <span class="absolute -top-3 -right-4 text-[10px] bg-ethereal/20 text-ethereal px-1.5 py-0.5 rounded border border-ethereal/30 whitespace-nowrap">Soon</span>
-                </a>
-                <a href="#cta" onclick="switchPage('home')" class="px-5 py-2 border border-gold-400 text-gold-400 hover:bg-gold-400 hover:text-deep-900 transition-all rounded-sm">Book Session</a>
+    <div id="boot-screen" class="fixed inset-0 z-[100] min-h-screen bg-archival-dark text-amber-600 font-mono flex flex-col justify-center items-start p-6 md:p-12 overflow-hidden cursor-none">
+        <div class="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-amber-900/10 via-archival-dark to-black z-0"></div>
+        <div class="relative z-10 w-full max-w-2xl mx-auto border-l-2 border-amber-900/50 pl-6">
+            <i class="ph ph-archive text-6xl mb-8 text-amber-700 animate-pulse block"></i>
+            <h2 class="text-xl font-serif tracking-widest text-amber-500 mb-4 border-b border-amber-900/50 pb-2 uppercase">Gov Archive Retrieval</h2>
+            <div id="boot-text-container" class="space-y-2">
+                <!-- Text injected via JS -->
             </div>
-
-            <!-- Mobile Menu Button -->
-            <button class="md:hidden text-2xl text-white" id="mobile-menu-btn">
-                <i class="ph ph-list"></i>
-            </button>
-        </div>
-        
-        <!-- Mobile Menu Dropdown -->
-        <div id="mobile-menu" class="hidden absolute top-full left-0 w-full glass-panel border-t border-gray-800 py-4 flex-col items-center gap-6 shadow-2xl">
-            <a href="#mission" onclick="switchPage('home')" class="mobile-link text-sm uppercase tracking-widest hover:text-gold-400">Mission</a>
-            <a href="#founder" onclick="switchPage('home')" class="mobile-link text-sm uppercase tracking-widest hover:text-gold-400">Founder</a>
-            <a href="#modalities" onclick="switchPage('home')" class="mobile-link text-sm uppercase tracking-widest hover:text-gold-400">Modalities</a>
-            <a href="#courses" onclick="switchPage('home')" class="mobile-link text-sm uppercase tracking-widest hover:text-gold-400">Courses</a>
-            <a href="#" onclick="switchPage('shop')" class="mobile-link text-sm uppercase tracking-widest text-ethereal">Shop (Soon)</a>
-            <a href="#cta" onclick="switchPage('home')" class="mobile-link text-sm uppercase tracking-widest text-gold-400">Book Session</a>
-        </div>
-    </nav>
-
-    <!-- MAIN PAGE CONTAINER -->
-    <div id="home-page" class="block">
-
-    <header class="relative min-h-screen flex items-center justify-center overflow-hidden pt-20">
-        <!-- Background Overlay -->
-        <div class="absolute inset-0 bg-hero-pattern bg-cover bg-center bg-no-repeat opacity-40"></div>
-        <div class="absolute inset-0 bg-gradient-to-b from-deep-900/50 via-deep-900/80 to-deep-900"></div>
-        
-        <!-- Interactive Quantum Canvas -->
-        <canvas id="quantum-canvas" class="absolute inset-0 w-full h-full z-0 opacity-60 pointer-events-none"></canvas>
-
-        <!-- Healing Orbs Container -->
-        <div id="healing-orbs-container" class="absolute inset-0 overflow-hidden pointer-events-none"></div>
-
-        <div class="relative z-10 text-center px-4 max-w-5xl mx-auto flex flex-col items-center mt-12">
-            <div class="mb-6 animate-float relative">
-                <i class="ph-light ph-infinity text-6xl text-gold-400 opacity-80"></i>
-                <i class="ph-fill ph-heart text-2xl text-ethereal absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 animate-heartbeat"></i>
-            </div>
-            <h2 class="text-gold-400 tracking-[0.3em] uppercase text-sm md:text-base font-semibold mb-4 fade-in-element">
-                The School of Quantum Healing
-            </h2>
-            <h1 class="font-serif text-5xl md:text-7xl lg:text-8xl font-bold mb-6 leading-tight glow-text fade-in-element" style="transition-delay: 0.2s;">
-                Sky Is to Fly
-            </h1>
-            <p class="text-xl md:text-3xl font-light italic text-gray-300 mb-12 max-w-3xl fade-in-element" style="transition-delay: 0.4s;">
-                “From Trauma to Truth, From Pain to Power.”
-            </p>
-            
-            <div class="flex flex-col sm:flex-row gap-6 fade-in-element" style="transition-delay: 0.6s;">
-                <a href="https://wa.me/917009977257?text=Hello%20Captain%20Poonam,%20I%20am%20interested%20in%20beginning%20my%20healing%20journey." target="_blank" class="magnetic inline-block px-8 py-4 bg-gold-400 text-deep-900 font-bold uppercase tracking-wider rounded-sm hover:bg-white transition-colors duration-300 shadow-[0_0_15px_rgba(212,175,55,0.5)] text-center">
-                    Begin Your Journey
-                </a>
-                <a href="#modalities" class="magnetic inline-block px-8 py-4 border-2 border-white/20 text-white font-medium uppercase tracking-wider rounded-sm hover:border-white hover:bg-white/5 transition-all duration-300 text-center">
-                    Explore Modalities
-                </a>
-            </div>
-        </div>
-    </header>
-
-    <section id="mission" class="py-24 relative z-20">
-        <div class="max-w-7xl mx-auto px-6 md:px-12">
-            <div class="glass-panel p-8 md:p-16 rounded-xl military-border shadow-2xl relative overflow-hidden">
-                <!-- Decorative accent -->
-                <div class="absolute top-0 left-0 w-1 h-full bg-gradient-to-b from-gold-400 to-ethereal"></div>
-                
-                <div class="grid md:grid-cols-2 gap-12 items-center">
-                    <div class="fade-in-element">
-                        <h3 class="text-gold-400 tracking-widest uppercase text-sm font-semibold mb-2">Our Mission</h3>
-                        <h2 class="font-serif text-3xl md:text-5xl font-bold mb-6">The Portal to a New Dimension</h2>
-                        <div class="w-20 h-1 bg-gold-400 mb-8"></div>
-                    </div>
-                    <div class="space-y-6 text-gray-300 leading-relaxed fade-in-element" style="transition-delay: 0.2s;">
-                        <p class="text-lg">
-                            We exist to help you heal from deep-seated childhood traumas that lay the blueprint for your adult life. Here, you break free from toxic relationship dynamics and rewire your existence for real, heart-to-heart connections.
-                        </p>
-                        <p class="text-lg">
-                            This is not just a school; it is a portal. For those ready to shift their entire lives into a totally different dimension, we guide you through a profound physical, mental, emotional, and spiritual transformation.
-                        </p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section id="founder" class="py-24 bg-deep-800 relative z-20 border-t border-white/5">
-        <div class="max-w-7xl mx-auto px-6 md:px-12">
-            <div class="grid lg:grid-cols-2 gap-16 items-center">
-                <!-- Image side -->
-                <div class="relative fade-in-element">
-                    <!-- Gold frame -->
-                    <div class="absolute inset-0 border-2 border-gold-400/30 transform translate-x-4 translate-y-4 rounded-xl z-0"></div>
-                    <!-- Image container -->
-                    <div class="relative z-10 rounded-xl">
-                        <!-- Using a majestic placeholder for the Founder -->
-                        <img src="https://images.unsplash.com/photo-1611432579699-484f7990b127?q=80&w=800&auto=format&fit=crop" alt="Captain Poonam Kaur" class="w-full h-[500px] object-cover rounded-xl grayscale hover:grayscale-0 transition-all duration-700 shadow-2xl">
-                        
-                        <!-- Name Badge positioned outside bounds safely -->
-                        <div class="absolute -bottom-6 -right-4 md:-right-8 glass-panel border border-gold-400/50 p-6 rounded-lg shadow-[0_10px_30px_rgba(212,175,55,0.2)]">
-                            <h3 class="font-serif text-2xl font-bold text-white mb-1">Capt. Poonam Kaur</h3>
-                            <p class="text-gold-400 text-sm tracking-widest uppercase">Spiritual Guide & Founder</p>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Text side -->
-                <div class="fade-in-element" style="transition-delay: 0.2s;">
-                    <h3 class="text-ethereal tracking-widest uppercase text-sm font-semibold mb-2">Meet the Guide</h3>
-                    <h2 class="font-serif text-4xl md:text-5xl font-bold mb-6">From Battlefield to Spiritual Awakening</h2>
-                    
-                    <div class="space-y-4 text-gray-300 leading-relaxed mb-8 text-lg">
-                        <p>
-                            Captain Poonam Kaur is a retired Army officer, spiritual guide, and a Twin Flame. After battling through immense life challenges, a profound spiritual awakening unlocked her deep intuitive gifts.
-                        </p>
-                        <p>
-                            As a master Timeline Trauma Healer and Teacher Trainer, her soul-led mission is to help you heal at your absolute core. She bridges the grounded discipline of her military background with profound energetic alchemy to help you reclaim your power.
-                        </p>
-                    </div>
-
-                    <div class="grid grid-cols-2 gap-4 text-sm text-gray-400 mb-8">
-                        <div class="flex items-center gap-2"><i class="ph-fill ph-check-circle text-gold-400"></i> Inner Child Healing</div>
-                        <div class="flex items-center gap-2"><i class="ph-fill ph-check-circle text-gold-400"></i> Soul Renewal</div>
-                        <div class="flex items-center gap-2"><i class="ph-fill ph-check-circle text-gold-400"></i> Light Body Activation</div>
-                        <div class="flex items-center gap-2"><i class="ph-fill ph-check-circle text-gold-400"></i> Ho’oponopono</div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section id="modalities" class="py-24 relative z-20 bg-deep-900 border-t border-white/5">
-        <div class="max-w-7xl mx-auto px-6 md:px-12">
-            <div class="text-center mb-16">
-                <h3 class="text-ethereal tracking-widest uppercase text-sm font-semibold mb-2 fade-in-element">The Pathways</h3>
-                <h2 class="font-serif text-4xl md:text-5xl font-bold mb-6 fade-in-element">Healing Modalities</h2>
-                <p class="text-gray-400 max-w-2xl mx-auto fade-in-element">Select a pathway to explore the deep energetic alchemy required for your transformation.</p>
-            </div>
-
-            <div class="grid sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
-                <!-- Timeline Trauma -->
-                <div class="card-glow glass-panel p-6 border border-white/10 rounded-xl flex flex-col fade-in-element relative overflow-hidden group">
-                    <div class="w-12 h-12 rounded-full bg-white/5 flex items-center justify-center text-gold-400 mb-4 group-hover:bg-gold-400 group-hover:text-deep-900 transition-colors">
-                        <i class="ph ph-clock-counter-clockwise text-2xl"></i>
-                    </div>
-                    <h3 class="font-serif text-xl font-bold mb-2">Timeline Trauma</h3>
-                    <p class="text-gray-400 text-sm mb-6 flex-grow">Catch and clear the exact origin of trauma across your entire timeline.</p>
-                    <button data-modality="timeline" class="modal-trigger text-ethereal text-sm uppercase tracking-widest font-semibold flex items-center gap-2 hover:text-gold-400 transition-colors">
-                        Read More <i class="ph-bold ph-arrow-right"></i>
-                    </button>
-                </div>
-
-                <!-- Twin Flame -->
-                <div class="card-glow glass-panel p-6 border border-white/10 rounded-xl flex flex-col fade-in-element relative overflow-hidden group">
-                    <div class="w-12 h-12 rounded-full bg-white/5 flex items-center justify-center text-ethereal mb-4 group-hover:bg-ethereal group-hover:text-white transition-colors">
-                        <i class="ph ph-fire text-2xl"></i>
-                    </div>
-                    <h3 class="font-serif text-xl font-bold mb-2">Twin Flame</h3>
-                    <p class="text-gray-400 text-sm mb-6 flex-grow">Heal the painful runner/chaser dynamic and reach physical union.</p>
-                    <button data-modality="twinflame" class="modal-trigger text-ethereal text-sm uppercase tracking-widest font-semibold flex items-center gap-2 hover:text-gold-400 transition-colors">
-                        Read More <i class="ph-bold ph-arrow-right"></i>
-                    </button>
-                </div>
-
-                <!-- Relationship Healing -->
-                <div class="card-glow glass-panel p-6 border border-white/10 rounded-xl flex flex-col fade-in-element relative overflow-hidden group">
-                    <div class="w-12 h-12 rounded-full bg-white/5 flex items-center justify-center text-gold-400 mb-4 group-hover:bg-gold-400 group-hover:text-deep-900 transition-colors">
-                        <i class="ph ph-users text-2xl"></i>
-                    </div>
-                    <h3 class="font-serif text-xl font-bold mb-2">Relationship</h3>
-                    <p class="text-gray-400 text-sm mb-6 flex-grow">Break endless abusive cycles and narcissistic dynamics.</p>
-                    <button data-modality="relationship" class="modal-trigger text-ethereal text-sm uppercase tracking-widest font-semibold flex items-center gap-2 hover:text-gold-400 transition-colors">
-                        Read More <i class="ph-bold ph-arrow-right"></i>
-                    </button>
-                </div>
-
-                <!-- Sacred Womb -->
-                <div class="card-glow glass-panel p-6 border border-white/10 rounded-xl flex flex-col fade-in-element relative overflow-hidden group">
-                    <div class="w-12 h-12 rounded-full bg-white/5 flex items-center justify-center text-ethereal mb-4 group-hover:bg-ethereal group-hover:text-white transition-colors">
-                        <i class="ph ph-flower-lotus text-2xl"></i>
-                    </div>
-                    <h3 class="font-serif text-xl font-bold mb-2">Sacred Womb</h3>
-                    <p class="text-gray-400 text-sm mb-6 flex-grow">Release emotional blockages and tap into infinite creative potential.</p>
-                    <button data-modality="womb" class="modal-trigger text-ethereal text-sm uppercase tracking-widest font-semibold flex items-center gap-2 hover:text-gold-400 transition-colors">
-                        Read More <i class="ph-bold ph-arrow-right"></i>
-                    </button>
-                </div>
-
-                <!-- Sexual Trauma -->
-                <div class="card-glow glass-panel p-6 border border-white/10 rounded-xl flex flex-col fade-in-element relative overflow-hidden group">
-                    <div class="w-12 h-12 rounded-full bg-white/5 flex items-center justify-center text-gold-400 mb-4 group-hover:bg-gold-400 group-hover:text-deep-900 transition-colors">
-                        <i class="ph ph-hands-praying text-2xl"></i>
-                    </div>
-                    <h3 class="font-serif text-xl font-bold mb-2">Sexual Trauma</h3>
-                    <p class="text-gray-400 text-sm mb-6 flex-grow">Restore a profound sense of empowerment and body safety.</p>
-                    <button data-modality="sexualtrauma" class="modal-trigger text-ethereal text-sm uppercase tracking-widest font-semibold flex items-center gap-2 hover:text-gold-400 transition-colors">
-                        Read More <i class="ph-bold ph-arrow-right"></i>
-                    </button>
-                </div>
-
-                <!-- Ancestral Healing -->
-                <div class="card-glow glass-panel p-6 border border-white/10 rounded-xl flex flex-col fade-in-element relative overflow-hidden group">
-                    <div class="w-12 h-12 rounded-full bg-white/5 flex items-center justify-center text-ethereal mb-4 group-hover:bg-ethereal group-hover:text-white transition-colors">
-                        <i class="ph ph-tree-evergreen text-2xl"></i>
-                    </div>
-                    <h3 class="font-serif text-xl font-bold mb-2">Ancestral Healing</h3>
-                    <p class="text-gray-400 text-sm mb-6 flex-grow">Lift curses and unresolved traumas from your entire family lineage.</p>
-                    <button data-modality="ancestral" class="modal-trigger text-ethereal text-sm uppercase tracking-widest font-semibold flex items-center gap-2 hover:text-gold-400 transition-colors">
-                        Read More <i class="ph-bold ph-arrow-right"></i>
-                    </button>
-                </div>
-
-                <!-- Spiritual Awakening -->
-                <div class="card-glow glass-panel p-6 border border-white/10 rounded-xl flex flex-col fade-in-element relative overflow-hidden group">
-                    <div class="w-12 h-12 rounded-full bg-white/5 flex items-center justify-center text-gold-400 mb-4 group-hover:bg-gold-400 group-hover:text-deep-900 transition-colors">
-                        <i class="ph ph-sparkle text-2xl"></i>
-                    </div>
-                    <h3 class="font-serif text-xl font-bold mb-2">Spiritual Awakening</h3>
-                    <p class="text-gray-400 text-sm mb-6 flex-grow">Navigate the painful paradigm shifts of enlightenment safely.</p>
-                    <button data-modality="spiritual" class="modal-trigger text-ethereal text-sm uppercase tracking-widest font-semibold flex items-center gap-2 hover:text-gold-400 transition-colors">
-                        Read More <i class="ph-bold ph-arrow-right"></i>
-                    </button>
-                </div>
-
-                <!-- Soul Rebirthing -->
-                <div class="card-glow glass-panel p-6 border border-white/10 rounded-xl flex flex-col fade-in-element relative overflow-hidden group">
-                    <div class="w-12 h-12 rounded-full bg-white/5 flex items-center justify-center text-ethereal mb-4 group-hover:bg-ethereal group-hover:text-white transition-colors">
-                        <i class="ph ph-bird text-2xl"></i>
-                    </div>
-                    <h3 class="font-serif text-xl font-bold mb-2">Soul Rebirthing</h3>
-                    <p class="text-gray-400 text-sm mb-6 flex-grow">Integrate lost soul fragments to become whole and complete again.</p>
-                    <button data-modality="soulrebirthing" class="modal-trigger text-ethereal text-sm uppercase tracking-widest font-semibold flex items-center gap-2 hover:text-gold-400 transition-colors">
-                        Read More <i class="ph-bold ph-arrow-right"></i>
-                    </button>
-                </div>
-                
-                <!-- Career & Abundance -->
-                <div class="card-glow glass-panel p-6 border border-white/10 rounded-xl flex flex-col fade-in-element relative overflow-hidden group">
-                    <div class="w-12 h-12 rounded-full bg-white/5 flex items-center justify-center text-gold-400 mb-4 group-hover:bg-gold-400 group-hover:text-deep-900 transition-colors">
-                        <i class="ph ph-star-four text-2xl"></i>
-                    </div>
-                    <h3 class="font-serif text-xl font-bold mb-2">Career & Abundance</h3>
-                    <p class="text-gray-400 text-sm mb-6 flex-grow">Remove unseen energetic blockages to open gates of prosperity.</p>
-                    <button data-modality="career" class="modal-trigger text-ethereal text-sm uppercase tracking-widest font-semibold flex items-center gap-2 hover:text-gold-400 transition-colors">
-                        Read More <i class="ph-bold ph-arrow-right"></i>
-                    </button>
-                </div>
-
-                <!-- Health & Chakras -->
-                <div class="card-glow glass-panel p-6 border border-white/10 rounded-xl flex flex-col fade-in-element relative overflow-hidden group">
-                    <div class="w-12 h-12 rounded-full bg-white/5 flex items-center justify-center text-ethereal mb-4 group-hover:bg-ethereal group-hover:text-white transition-colors">
-                        <i class="ph ph-person-simple-meditate text-2xl"></i>
-                    </div>
-                    <h3 class="font-serif text-xl font-bold mb-2">Health & Chakras</h3>
-                    <p class="text-gray-400 text-sm mb-6 flex-grow">Balance energy centers and heal the emotional body to cure the physical.</p>
-                    <button data-modality="energy" class="modal-trigger text-ethereal text-sm uppercase tracking-widest font-semibold flex items-center gap-2 hover:text-gold-400 transition-colors">
-                        Read More <i class="ph-bold ph-arrow-right"></i>
-                    </button>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section id="testimonials" class="py-24 relative bg-deep-800 border-t border-white/5 overflow-hidden">
-        <div class="absolute left-0 top-1/2 w-64 h-64 bg-ethereal/10 rounded-full blur-[100px] -z-10 transform -translate-y-1/2"></div>
-        
-        <div class="max-w-7xl mx-auto px-6 md:px-12">
-            <div class="text-center mb-16">
-                <i class="ph-fill ph-quotes text-4xl text-gold-400 mb-4 opacity-50 fade-in-element"></i>
-                <h3 class="text-ethereal tracking-widest uppercase text-sm font-semibold mb-2 fade-in-element">Soul Transformations</h3>
-                <h2 class="font-serif text-4xl md:text-5xl font-bold fade-in-element">Voices of Awakening</h2>
-            </div>
-
-            <div class="grid md:grid-cols-3 gap-8">
-                <!-- Testimonial 1 -->
-                <div class="glass-panel p-8 rounded-xl border border-white/10 relative fade-in-element card-glow">
-                    <div class="flex text-gold-400 mb-4 text-sm gap-1">
-                        <i class="ph-fill ph-star"></i><i class="ph-fill ph-star"></i><i class="ph-fill ph-star"></i><i class="ph-fill ph-star"></i><i class="ph-fill ph-star"></i>
-                    </div>
-                    <p class="text-gray-300 italic mb-6">"I was stuck in a toxic, soul-crushing relationship dynamic for years. Captain Poonam helped me identify the root cord of my trauma. Today, my life has completely shifted dimensions into pure peace."</p>
-                    <div class="border-t border-white/10 pt-4">
-                        <p class="font-serif font-bold text-white">S. Sharma</p>
-                        <p class="text-xs text-ethereal uppercase tracking-widest">Relationship Healing</p>
-                    </div>
-                </div>
-
-                <!-- Testimonial 2 -->
-                <div class="glass-panel p-8 rounded-xl border border-white/10 relative fade-in-element card-glow" style="transition-delay: 0.2s;">
-                    <div class="flex text-gold-400 mb-4 text-sm gap-1">
-                        <i class="ph-fill ph-star"></i><i class="ph-fill ph-star"></i><i class="ph-fill ph-star"></i><i class="ph-fill ph-star"></i><i class="ph-fill ph-star"></i>
-                    </div>
-                    <p class="text-gray-300 italic mb-6">"Navigating my twin flame journey was the most agonizing experience of my life until I found this school. The runner/chaser cycle ended the moment I learned how to truly integrate my soul fragments."</p>
-                    <div class="border-t border-white/10 pt-4">
-                        <p class="font-serif font-bold text-white">M. R.</p>
-                        <p class="text-xs text-ethereal uppercase tracking-widest">Twin Flame Healing</p>
-                    </div>
-                </div>
-
-                <!-- Testimonial 3 -->
-                <div class="glass-panel p-8 rounded-xl border border-white/10 relative fade-in-element card-glow" style="transition-delay: 0.4s;">
-                    <div class="flex text-gold-400 mb-4 text-sm gap-1">
-                        <i class="ph-fill ph-star"></i><i class="ph-fill ph-star"></i><i class="ph-fill ph-star"></i><i class="ph-fill ph-star"></i><i class="ph-fill ph-star"></i>
-                    </div>
-                    <p class="text-gray-300 italic mb-6">"The deep dive into Ancestral Healing lifted a heavy darkness from my shoulders that I didn't even know I was carrying. My career blockages vanished within weeks. Highly recommended."</p>
-                    <div class="border-t border-white/10 pt-4">
-                        <p class="font-serif font-bold text-white">A. Verma</p>
-                        <p class="text-xs text-ethereal uppercase tracking-widest">Ancestral & Abundance</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- NEW F.A.Q SECTION -->
-    <section id="faq" class="py-24 relative overflow-hidden bg-deep-900 border-t border-white/5">
-        <!-- Abstract background elements -->
-        <div class="absolute right-0 top-1/2 w-96 h-96 bg-ethereal/5 rounded-full blur-[120px] -z-10 transform -translate-y-1/2"></div>
-
-        <div class="max-w-4xl mx-auto px-6 md:px-12">
-            <div class="text-center mb-16">
-                <h3 class="text-gold-400 tracking-widest uppercase text-sm font-semibold mb-2 fade-in-element">Clarity & Truth</h3>
-                <h2 class="font-serif text-4xl md:text-5xl font-bold mb-6 fade-in-element">Frequently Asked Questions</h2>
-            </div>
-
-            <div class="space-y-4 fade-in-element">
-                <!-- FAQ Item 1 -->
-                <div class="glass-panel border border-white/10 rounded-lg overflow-hidden transition-all duration-300">
-                    <button class="faq-btn w-full px-6 py-5 flex items-center justify-between text-left focus:outline-none">
-                        <span class="font-serif text-lg font-semibold text-white">Are the healing sessions conducted online or in-person?</span>
-                        <i class="ph ph-caret-down text-gold-400 transition-transform duration-300"></i>
-                    </button>
-                    <div class="faq-content max-h-0 overflow-hidden transition-all duration-500 ease-in-out bg-white/5">
-                        <p class="px-6 pb-6 text-gray-300 leading-relaxed">
-                            To accommodate global clients and ensure you are in a safe, comfortable environment, all sessions are conducted online via secure video calls. Energy knows no bounds, and quantum healing is equally effective regardless of physical distance.
-                        </p>
-                    </div>
-                </div>
-
-                <!-- FAQ Item 2 -->
-                <div class="glass-panel border border-white/10 rounded-lg overflow-hidden transition-all duration-300">
-                    <button class="faq-btn w-full px-6 py-5 flex items-center justify-between text-left focus:outline-none">
-                        <span class="font-serif text-lg font-semibold text-white">How many sessions will I need?</span>
-                        <i class="ph ph-caret-down text-gold-400 transition-transform duration-300"></i>
-                    </button>
-                    <div class="faq-content max-h-0 overflow-hidden transition-all duration-500 ease-in-out bg-white/5">
-                        <p class="px-6 pb-6 text-gray-300 leading-relaxed">
-                            Every soul's journey is unique. During your initial consultation, Captain Poonam will assess your energetic blueprint and timeline. Some deep-seated traumas can be shifted rapidly, while complex ancestral or twin flame dynamics may require a structured, multi-session approach.
-                        </p>
-                    </div>
-                </div>
-
-                <!-- FAQ Item 3 -->
-                <div class="glass-panel border border-white/10 rounded-lg overflow-hidden transition-all duration-300">
-                    <button class="faq-btn w-full px-6 py-5 flex items-center justify-between text-left focus:outline-none">
-                        <span class="font-serif text-lg font-semibold text-white">What should I expect during a session?</span>
-                        <i class="ph ph-caret-down text-gold-400 transition-transform duration-300"></i>
-                    </button>
-                    <div class="faq-content max-h-0 overflow-hidden transition-all duration-500 ease-in-out bg-white/5">
-                        <p class="px-6 pb-6 text-gray-300 leading-relaxed">
-                            Expect a safe, completely non-judgmental space. Depending on the modality, sessions may include deep conversational therapy, guided energetic visualizations, timeline regressions, and breathwork. You may experience emotional releases, physical sensations of lightness, and sudden moments of deep clarity.
-                        </p>
-                    </div>
-                </div>
-                
-                <!-- FAQ Item 4 -->
-                <div class="glass-panel border border-white/10 rounded-lg overflow-hidden transition-all duration-300">
-                    <button class="faq-btn w-full px-6 py-5 flex items-center justify-between text-left focus:outline-none">
-                        <span class="font-serif text-lg font-semibold text-white">I don't know which modality I need. Can you help?</span>
-                        <i class="ph ph-caret-down text-gold-400 transition-transform duration-300"></i>
-                    </button>
-                    <div class="faq-content max-h-0 overflow-hidden transition-all duration-500 ease-in-out bg-white/5">
-                        <p class="px-6 pb-6 text-gray-300 leading-relaxed">
-                            Absolutely. You do not need to diagnose yourself. Simply book a general session via WhatsApp, and Captain Poonam will use her intuitive gifts to identify where the blockages lie and guide you toward the exact healing modality your soul requires.
-                        </p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section id="courses" class="py-24 bg-deep-800 relative border-t border-white/5">
-        <div class="absolute left-1/2 top-0 -translate-x-1/2 w-3/4 h-32 bg-gradient-radial from-gold-500/10 to-transparent opacity-30 blur-2xl"></div>
-        
-        <div class="max-w-7xl mx-auto px-6 md:px-12 relative z-10">
-            <div class="text-center mb-16">
-                <h3 class="text-gold-400 tracking-widest uppercase text-sm font-semibold mb-2 fade-in-element">Deeper Mastery</h3>
-                <h2 class="font-serif text-4xl md:text-5xl font-bold mb-6 fade-in-element">Quantum Courses</h2>
-                <p class="text-gray-400 max-w-2xl mx-auto fade-in-element">Immerse yourself in structured programs designed for lasting transformation.</p>
-            </div>
-
-            <div class="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
-                <!-- Course 1: Guided Meditations -->
-                <div class="glass-panel p-8 rounded-xl border border-gold-400/20 shadow-lg flex flex-col fade-in-element">
-                    <div class="w-16 h-16 rounded-lg bg-deep-900 border border-ethereal/50 flex items-center justify-center mb-6 text-ethereal">
-                        <i class="ph ph-headphones text-3xl"></i>
-                    </div>
-                    <h3 class="font-serif text-2xl font-bold mb-4 text-white">Guided Meditations</h3>
-                    <p class="text-gray-300 mb-6 flex-grow">
-                        A curated collection of conscious meditations and breathwork practices. Addresses both positive and negative stress, reducing chronic pain, anxiety, and depression. Shift your life into a totally different dimension through focused concentration.
-                    </p>
-                    <a href="https://wa.me/917009977257?text=Hello%20Captain%20Poonam,%20I%20am%20interested%20in%20the%20Guided%20Meditations%20course." target="_blank" class="w-full px-6 py-3 border border-ethereal text-ethereal text-center font-bold uppercase tracking-widest rounded-sm hover:bg-ethereal hover:text-white transition-all">
-                        Enroll Now
-                    </a>
-                </div>
-
-                <!-- Course 2: Advanced Quantum Healing -->
-                <div class="glass-panel p-8 rounded-xl border border-gold-400/20 shadow-lg flex flex-col fade-in-element" style="transition-delay: 0.2s;">
-                    <div class="w-16 h-16 rounded-lg bg-deep-900 border border-gold-400/50 flex items-center justify-center mb-6 text-gold-400">
-                        <i class="ph ph-graduation-cap text-3xl"></i>
-                    </div>
-                    <h3 class="font-serif text-2xl font-bold mb-4 text-white">Advanced Healer Training</h3>
-                    <p class="text-gray-300 mb-6 flex-grow">
-                        Learn directly from Captain Poonam Kaur. This intensive teacher training program equips you with the toolkit to perform Timeline Trauma Healing and guide others through their spiritual awakening.
-                    </p>
-                    <a href="https://wa.me/917009977257?text=Hello%20Captain%20Poonam,%20I%20want%20to%20learn%20more%20about%20the%20Advanced%20Healer%20Training." target="_blank" class="w-full px-6 py-3 border border-gold-400 text-gold-400 text-center font-bold uppercase tracking-widest rounded-sm hover:bg-gold-400 hover:text-deep-900 transition-all">
-                        Join the Waitlist
-                    </a>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section id="cta" class="py-24 bg-gradient-to-t from-deep-800 to-deep-900 border-t border-white/5 relative">
-        <div class="max-w-4xl mx-auto px-6 text-center z-10 relative">
-            <i class="ph-fill ph-sun text-4xl text-gold-400 mb-6 animate-float inline-block"></i>
-            <h2 class="font-serif text-4xl md:text-6xl font-bold mb-6 glow-text fade-in-element">
-                Break the Cycle. Reclaim Your Power.
-            </h2>
-            <p class="text-xl text-gray-300 mb-10 font-light fade-in-element" style="transition-delay: 0.2s;">
-                Step into a life of clarity, unconditional love, and profound peace. Your highest timeline awaits.
-            </p>
-            
-            <div class="flex flex-col sm:flex-row gap-6 justify-center fade-in-element" style="transition-delay: 0.4s;">
-                <a href="https://wa.me/917009977257?text=Hello%20Captain%20Poonam,%20I%20would%20like%20to%20book%20a%20general%20consultation%20session." target="_blank" class="magnetic btn-shimmer inline-flex px-8 py-4 bg-gold-400 text-deep-900 font-bold uppercase tracking-wider rounded-sm hover:bg-white transition-colors duration-300 shadow-[0_0_20px_rgba(212,175,55,0.4)] items-center justify-center gap-2">
-                    <i class="ph-fill ph-whatsapp-logo text-xl"></i> Book a Session
-                </a>
-                <a href="#courses" class="magnetic inline-block px-8 py-4 bg-white/5 border border-white/20 text-white font-medium uppercase tracking-wider rounded-sm hover:bg-white/10 transition-colors duration-300 text-center">
-                    Explore Courses
-                </a>
-            </div>
-        </div>
-    </section>
-
-    </div> <!-- END OF HOME PAGE -->
-
-    <!-- SEPARATE SHOP PAGE CONTAINER -->
-    <div id="shop-page" class="hidden min-h-screen pt-32 pb-24 relative overflow-hidden bg-deep-800">
-        <!-- Background Accents -->
-        <div class="absolute left-0 top-1/2 w-full h-px bg-gradient-to-r from-transparent via-ethereal/20 to-transparent transform -translate-y-1/2"></div>
-        <div class="absolute right-1/4 top-1/4 w-96 h-96 bg-ethereal/5 rounded-full blur-[100px] -z-10"></div>
-
-        <div class="max-w-7xl mx-auto px-6 md:px-12 relative z-20">
-            
-            <button onclick="switchPage('home')" class="group mb-12 inline-flex items-center gap-2 text-gray-400 hover:text-gold-400 transition-colors font-medium tracking-widest uppercase text-sm">
-                <i class="ph ph-arrow-left text-xl group-hover:-translate-x-1 transition-transform"></i> Return to Main Realm
-            </button>
-
-            <div class="text-center mb-16 relative z-20">
-                <h3 class="text-ethereal tracking-widest uppercase text-sm font-semibold mb-2 fade-in-element visible">Sacred Apothecary</h3>
-                <h2 class="font-serif text-4xl md:text-5xl font-bold mb-6 fade-in-element visible text-white">The Quantum Shop</h2>
-                <p class="text-gray-400 max-w-2xl mx-auto fade-in-element visible">High-frequency tools, crystals, and sacred geometries to support your physical and spiritual integration.</p>
-            </div>
-
-            <!-- Shop Interface Mockup Container -->
-            <div class="relative rounded-2xl border border-white/10 glass-panel p-6 md:p-10 overflow-hidden fade-in-element visible">
-                
-                <!-- Mockup Grid (Blurred out) -->
-                <div class="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-6 opacity-40 blur-[4px] pointer-events-none filter grayscale transition-all duration-1000">
-                    <!-- Fake Product 1 -->
-                    <div class="bg-deep-900/50 rounded-xl p-4 border border-white/5">
-                        <div class="w-full aspect-square bg-white/5 rounded-lg mb-4 flex items-center justify-center">
-                            <i class="ph-light ph-sketch-logo text-4xl text-gray-500"></i>
-                        </div>
-                        <div class="h-4 bg-white/10 rounded w-3/4 mb-2"></div>
-                        <div class="h-3 bg-white/10 rounded w-1/4 mb-4"></div>
-                        <div class="h-8 bg-ethereal/20 rounded w-full"></div>
-                    </div>
-                    <!-- Fake Product 2 -->
-                    <div class="bg-deep-900/50 rounded-xl p-4 border border-white/5">
-                        <div class="w-full aspect-square bg-white/5 rounded-lg mb-4 flex items-center justify-center">
-                            <i class="ph-light ph-drop text-4xl text-gray-500"></i>
-                        </div>
-                        <div class="h-4 bg-white/10 rounded w-2/3 mb-2"></div>
-                        <div class="h-3 bg-white/10 rounded w-1/3 mb-4"></div>
-                        <div class="h-8 bg-ethereal/20 rounded w-full"></div>
-                    </div>
-                    <!-- Fake Product 3 -->
-                    <div class="bg-deep-900/50 rounded-xl p-4 border border-white/5 hidden md:block">
-                        <div class="w-full aspect-square bg-white/5 rounded-lg mb-4 flex items-center justify-center">
-                            <i class="ph-light ph-book-open text-4xl text-gray-500"></i>
-                        </div>
-                        <div class="h-4 bg-white/10 rounded w-4/5 mb-2"></div>
-                        <div class="h-3 bg-white/10 rounded w-1/4 mb-4"></div>
-                        <div class="h-8 bg-ethereal/20 rounded w-full"></div>
-                    </div>
-                    <!-- Fake Product 4 -->
-                    <div class="bg-deep-900/50 rounded-xl p-4 border border-white/5 hidden md:block">
-                        <div class="w-full aspect-square bg-white/5 rounded-lg mb-4 flex items-center justify-center">
-                            <i class="ph-light ph-moon-stars text-4xl text-gray-500"></i>
-                        </div>
-                        <div class="h-4 bg-white/10 rounded w-1/2 mb-2"></div>
-                        <div class="h-3 bg-white/10 rounded w-1/3 mb-4"></div>
-                        <div class="h-8 bg-ethereal/20 rounded w-full"></div>
-                    </div>
-                </div>
-
-                <!-- Coming Soon Overlay -->
-                <div class="absolute inset-0 bg-deep-900/60 backdrop-blur-sm z-10 flex flex-col items-center justify-center text-center px-4">
-                    <div class="w-20 h-20 rounded-full bg-deep-800 border border-ethereal/50 flex items-center justify-center mb-6 shadow-[0_0_30px_rgba(139,92,246,0.3)] animate-float">
-                        <i class="ph-fill ph-lock-key text-3xl text-ethereal"></i>
-                    </div>
-                    <h3 class="font-serif text-3xl md:text-5xl font-bold text-white mb-4 glow-text">
-                        Opening Soon
-                    </h3>
-                    <p class="text-gray-300 max-w-md mx-auto mb-8 text-lg">
-                        We are currently curating a high-vibrational collection of healing tools to accelerate your quantum journey.
-                    </p>
-                    <a href="https://wa.me/917009977257?text=Hello%20Captain%20Poonam,%20please%20add%20me%20to%20the%20waitlist%20for%20the%20Quantum%20Shop%20launch!" target="_blank" class="magnetic inline-flex items-center gap-2 px-8 py-4 bg-ethereal text-white font-bold uppercase tracking-wider rounded-sm hover:bg-white hover:text-deep-900 transition-colors duration-300 shadow-[0_0_20px_rgba(139,92,246,0.4)]">
-                        <i class="ph-bold ph-bell-ringing"></i> Join the Waitlist
-                    </a>
-                </div>
-            </div>
-        </div>
-    </div> <!-- END OF SHOP PAGE -->
-
-    <footer class="bg-deep-900 py-12 border-t border-white/10 text-center">
-        <div class="max-w-7xl mx-auto px-6">
-            <div class="flex justify-center gap-6 mb-8">
-                <a href="#" class="text-gray-400 hover:text-gold-400 transition-colors text-2xl"><i class="ph-fill ph-instagram-logo"></i></a>
-                <a href="#" class="text-gray-400 hover:text-gold-400 transition-colors text-2xl"><i class="ph-fill ph-youtube-logo"></i></a>
-                <a href="#" class="text-gray-400 hover:text-gold-400 transition-colors text-2xl"><i class="ph-fill ph-envelope-simple"></i></a>
-            </div>
-            <p class="text-gray-500 text-sm tracking-widest uppercase mb-2 flex items-center justify-center gap-2">
-                Crafted with <i class="ph-fill ph-heart text-ethereal animate-heartbeat"></i> for your healing journey
-            </p>
-            <p class="text-gray-500 text-sm tracking-widest uppercase mb-2">
-                &copy; 2026 Sky Is to Fly: The School of Quantum Healing.
-            </p>
-            <p class="text-gray-600 text-xs">
-                Founded by Captain Poonam Kaur. All rights reserved.
-            </p>
-        </div>
-    </footer>
-
-    <!-- Modality Detail Modal -->
-    <div id="detail-modal" class="fixed inset-0 z-[100] hidden items-center justify-center p-4 sm:p-6 opacity-0 transition-opacity duration-300">
-        <div class="absolute inset-0 bg-deep-900/80 backdrop-blur-md cursor-pointer" id="modal-backdrop"></div>
-        
-        <div class="relative glass-panel border border-gold-400/30 rounded-xl max-w-3xl w-full max-h-[90vh] overflow-y-auto shadow-[0_0_50px_rgba(139,92,246,0.15)] transform scale-95 transition-transform duration-300 z-10" id="modal-content-container">
-            <button id="close-modal" class="absolute top-4 right-4 md:top-6 md:right-6 text-gray-400 hover:text-gold-400 transition-colors w-10 h-10 flex items-center justify-center rounded-full bg-deep-800/50 border border-white/10 z-20">
-                <i class="ph ph-x text-xl"></i>
-            </button>
-            
-            <div class="p-8 md:p-12 relative">
-                <!-- Decorative element -->
-                <div class="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-gold-400 to-transparent opacity-50"></div>
-                
-                <!-- Dynamic Content Container -->
-                <div id="modal-body">
-                    <!-- Content injected via JS -->
-                </div>
-            </div>
+            <div class="w-3 h-5 bg-amber-600 animate-ping mt-4" id="boot-cursor"></div>
         </div>
     </div>
 
+    <div id="main-app" class="opacity-0 transition-opacity duration-1000 ease-in pointer-events-none relative min-h-screen">
+        
+        <!-- Parallax Background -->
+        <div id="parallax-bg" class="fixed inset-0 pointer-events-none opacity-[0.02] flex flex-wrap gap-24 justify-center items-center z-0 transition-transform duration-100 ease-out"></div>
+
+        <!-- Sniper Scope Vignette (Focus Mode) -->
+        <div id="focus-vignette" class="fixed inset-0 pointer-events-none z-30 transition-all duration-1000 opacity-0" style="background: radial-gradient(circle at center, transparent 20%, rgba(0,0,0,0.98) 100%);">
+            <div class="absolute top-1/2 left-0 w-full h-[1px] bg-red-900/30"></div>
+            <div class="absolute left-1/2 top-0 w-[1px] h-full bg-red-900/30"></div>
+            <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-96 h-96 border border-red-900/20 rounded-full"></div>
+            <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-64 h-64 border border-red-900/30 rounded-full"></div>
+        </div>
+
+        <div id="cursor-primary" class="fixed pointer-events-none z-50 transition-transform duration-75 ease-out flex items-center justify-center mix-blend-difference" style="left: -100px; top: -100px; transform: translate(-50%, -50%);">
+            <i class="ph ph-crosshair text-3xl text-white opacity-80"></i>
+        </div>
+        <div id="cursor-laser" class="fixed pointer-events-none z-50 flex items-center justify-center mix-blend-screen transition-all duration-100 ease-out" style="left: -100px; top: -100px; transform: translate(-50%, -50%);">
+            <div class="w-2 h-2 bg-archival-ink rounded-full shadow-[0_0_10px_rgba(185,28,28,1)]"></div>
+        </div>
+
+        <div id="impacts-container" class="fixed inset-0 pointer-events-none z-40 overflow-hidden"></div>
+
+        <nav class="relative z-20 p-4 md:p-6 flex justify-between items-center border-b-2 border-zinc-800 bg-[#0c0d10]/90 backdrop-blur-md">
+            <div class="flex items-center space-x-4 group cursor-pointer" onclick="toggleFocusMode(event)">
+                <div class="relative w-10 h-10 flex items-center justify-center bg-zinc-900 border border-zinc-700 rounded-sm shadow-[inset_0_0_10px_rgba(0,0,0,0.8)] overflow-hidden">
+                    <i class="ph ph-target text-archival-ink text-2xl absolute transition-transform duration-500 group-hover:scale-0"></i>
+                    <i class="ph ph-scales text-amber-600 text-2xl absolute scale-0 transition-transform duration-500 group-hover:scale-100"></i>
+                </div>
+                <div class="flex flex-col">
+                    <span class="font-serif font-bold tracking-widest text-base md:text-lg uppercase text-white drop-shadow-md">Cheshta Saluja</span>
+                    <span class="text-[9px] md:text-[10px] text-archival-ink tracking-[0.2em] md:tracking-[0.3em] font-mono border-t border-zinc-800 mt-0.5 pt-0.5">Advocate & Marksman</span>
+                </div>
+            </div>
+            
+            <button id="focus-btn" onclick="toggleFocusMode(event)" class="relative group overflow-hidden flex items-center space-x-2 px-4 md:px-6 py-2 rounded-sm transition-all duration-300 border bg-zinc-900 text-zinc-400 border-zinc-700 hover:border-archival-ink hover:text-red-400 interactive-element">
+                <i id="focus-icon" class="ph ph-crosshair text-sm"></i>
+                <span id="focus-text" class="text-[10px] md:text-xs font-bold tracking-widest uppercase z-10 relative">Lock Focus</span>
+            </button>
+        </nav>
+
+        <main class="relative z-10 max-w-7xl mx-auto p-4 md:p-12 grid grid-cols-1 lg:grid-cols-12 gap-10 md:gap-12 mb-16 mt-8">
+            
+            <!-- Left Column: Dossier Profile -->
+            <div class="lg:col-span-5 space-y-10 relative">
+                
+                <!-- Tactical Dossier Card (Physical File Vibe) -->
+                <div class="bg-[#14161a] legal-border p-6 md:p-8 relative shadow-2xl group hover:border-zinc-500 transition-colors">
+                    
+                    <!-- Top Secret Tab -->
+                    <div class="absolute -top-[26px] left-[-4px] bg-[#14161a] border-4 border-double border-b-0 border-zinc-700 px-4 py-1.5 text-[9px] font-mono text-zinc-400 uppercase tracking-widest z-10 flex items-center gap-2 group-hover:border-zinc-500 transition-colors">
+                        <i class="ph ph-folder text-amber-700"></i> Dossier: CS-2029
+                    </div>
+
+                    <!-- Government Stamp -->
+                    <div class="absolute top-4 right-4 md:top-8 md:right-8 z-20 pointer-events-none stamp-declassified">
+                        <div class="border-4 border-archival-ink text-archival-ink text-lg md:text-2xl font-black font-serif px-3 py-1 tracking-widest uppercase shadow-[0_0_15px_rgba(185,28,28,0.2)] bg-[#14161a]/90 backdrop-blur-sm transform rotate-[-15deg] mix-blend-lighten opacity-90">
+                            UNSEALED
+                        </div>
+                        <div class="text-[6px] md:text-[8px] text-archival-ink font-mono text-center mt-1 tracking-widest transform rotate-[-15deg] opacity-70">SUPREME CT ARCHIVE // AUTH.</div>
+                    </div>
+
+                    <!-- Waterprint Seal -->
+                    <div class="absolute -right-12 -top-12 text-zinc-800/30 rotate-[25deg] pointer-events-none">
+                        <i class="ph ph-seal-check" style="font-size: 16rem;"></i>
+                    </div>
+
+                    <div class="flex flex-wrap items-center gap-3 mb-8 relative z-10 mt-2">
+                        <div class="inline-flex items-center gap-2 px-3 py-1 bg-red-900/10 border-l-2 border-archival-ink text-red-500 text-[10px] font-mono uppercase tracking-widest">
+                            <i class="ph ph-shield-warning text-sm"></i> Clearance: Level-A
+                        </div>
+                    </div>
+                    
+                    <h1 class="text-5xl md:text-6xl font-serif font-black leading-none tracking-tighter mb-4 text-zinc-100 relative z-10">
+                        PRECISION <br/>
+                        <span class="flex items-center gap-4 mt-2">
+                            <span id="ampersand" class="text-zinc-600 transition-all duration-300 font-serif italic">&amp;</span> 
+                            POWER.
+                        </span>
+                    </h1>
+
+                    <div class="relative pl-6 py-4 mt-8 bg-[#0c0d10]/50 border border-zinc-800 z-10">
+                        <div class="absolute top-0 left-0 w-1 h-full bg-archival-ink"></div>
+                        <p class="text-sm leading-relaxed text-zinc-400 font-serif">
+                            <strong class="text-zinc-200 block mb-3 text-lg tracking-wide italic">"Where the Gavel strikes the Target."</strong>
+                            Pursuant to the records of a B.A.L.L.B. scholar, forging a path where the iron discipline of a <span class="redacted interactive-element font-mono text-xs" title="Click to reveal">10m Air Pistol marksman</span> collides with the intellectual rigor of <span class="redacted interactive-element font-mono text-xs" title="Click to reveal">Constitutional Law</span>.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="bg-[#14161a] border border-zinc-800 p-6 relative shadow-lg">
+                    <div class="absolute top-0 right-4 px-2 py-1 bg-[#0c0d10] text-[9px] font-mono text-zinc-600 -translate-y-1/2 border border-zinc-800 tracking-widest">
+                        SYS.CALIBRATION
+                    </div>
+                    
+                    <div class="flex justify-between items-center mb-6 border-b border-zinc-800 pb-4">
+                        <h3 class="font-serif font-bold tracking-widest uppercase text-xs text-zinc-300 flex items-center gap-2">
+                            <i class="ph ph-crosshair text-archival-ink"></i> Tactical Matrix
+                        </h3>
+                        <button id="decrypt-btn" onclick="toggleAllSkills()" class="interactive-element px-3 py-1.5 border border-archival-ink/30 bg-red-900/10 text-red-400 text-[10px] font-mono hover:bg-red-900/30 transition-all flex items-center gap-2 rounded-sm uppercase tracking-widest animate-pulse-glow">
+                            <i id="decrypt-icon" class="ph ph-lock-key"></i> <span id="decrypt-text">Override</span>
+                        </button>
+                    </div>
+                    
+                    <div class="space-y-5" id="skills-container">
+                        <!-- Skills injected by JS -->
+                    </div>
+                </div>
+            </div>
+
+            <div class="lg:col-span-7">
+                <!-- Exhibit Navigation -->
+                <div class="flex flex-col sm:flex-row gap-2 mb-8">
+                    <button onclick="switchTab('legal')" id="tab-btn-legal" class="tab-btn interactive-element flex-1 py-3 px-4 text-[10px] md:text-xs font-bold tracking-widest uppercase flex flex-col justify-center items-start sm:items-center gap-1 transition-all duration-300 border-l-4 sm:border-l-0 sm:border-t-4 bg-[#14161a] border-archival-ink text-red-400 shadow-[inset_0_20px_20px_-20px_rgba(185,28,28,0.1)]">
+                        <div class="flex items-center gap-2"><i class="ph ph-scales text-lg animate-bounce-subtle tab-icon"></i> <span class="text-zinc-500 font-mono text-[9px]">EXHIBIT A</span></div>
+                        <span>Legal Arsenal</span>
+                    </button>
+                    <button onclick="switchTab('marksman')" id="tab-btn-marksman" class="tab-btn interactive-element flex-1 py-3 px-4 text-[10px] md:text-xs font-bold tracking-widest uppercase flex flex-col justify-center items-start sm:items-center gap-1 transition-all duration-300 border-l-4 sm:border-l-0 sm:border-t-4 bg-[#0c0d10] border-zinc-800 text-zinc-500 hover:text-zinc-300 hover:bg-[#14161a]">
+                        <div class="flex items-center gap-2"><i class="ph ph-target text-lg tab-icon"></i> <span class="text-zinc-600 font-mono text-[9px]">EXHIBIT B</span></div>
+                        <span>Caliber & Focus</span>
+                    </button>
+                    <button onclick="switchTab('strategy')" id="tab-btn-strategy" class="tab-btn interactive-element flex-1 py-3 px-4 text-[10px] md:text-xs font-bold tracking-widest uppercase flex flex-col justify-center items-start sm:items-center gap-1 transition-all duration-300 border-l-4 sm:border-l-0 sm:border-t-4 bg-[#0c0d10] border-zinc-800 text-zinc-500 hover:text-zinc-300 hover:bg-[#14161a]">
+                        <div class="flex items-center gap-2"><i class="ph ph-lightning text-lg tab-icon"></i> <span class="text-zinc-600 font-mono text-[9px]">EXHIBIT C</span></div>
+                        <span>Strategic Acumen</span>
+                    </button>
+                </div>
+
+                <div class="relative min-h-[500px]">
+                    
+                    <!-- LEGAL TAB -->
+                    <div id="tab-content-legal" class="tab-content active">
+                        <div class="flex items-center gap-4 mb-8">
+                            <h2 class="text-2xl md:text-3xl font-serif font-black text-zinc-100 uppercase tracking-tight border-b-2 border-archival-ink pb-2">Record of Proceedings</h2>
+                        </div>
+                        <div class="space-y-8">
+                            <!-- Item 1 -->
+                            <div class="group relative bg-[#14161a] border-y border-zinc-800 py-6 md:py-8 hover:bg-[#1a1c23] transition-all duration-300 interactive-element px-4 md:px-8">
+                                <div class="absolute left-0 top-0 w-1 h-full bg-zinc-800 group-hover:bg-archival-ink transition-colors"></div>
+
+                                <div class="flex flex-col md:flex-row md:justify-between md:items-start mb-4 gap-4 relative z-10">
+                                    <div>
+                                        <h3 class="text-xl md:text-2xl font-serif font-bold text-zinc-100 group-hover:text-amber-500 transition-colors flex items-center gap-3">
+                                            <i class="ph ph-gavel text-amber-700/50"></i> Legal Intern
+                                        </h3>
+                                        <p class="text-zinc-400 font-mono text-xs mt-2 uppercase tracking-widest flex items-center gap-2">
+                                            Supreme Court of India
+                                        </p>
+                                    </div>
+                                    <div class="flex items-center gap-2 border border-dashed border-zinc-600 bg-zinc-900/50 px-3 py-1 self-start md:self-auto">
+                                        <span class="text-[10px] font-mono text-zinc-400 uppercase tracking-widest whitespace-nowrap">Status: Verified</span>
+                                    </div>
+                                </div>
+                                <p class="mt-4 leading-relaxed text-zinc-400 relative z-10 text-sm md:text-base font-serif">
+                                    Observed apex-level constitutional debates. Assisted in drafting and researching complex factual matrices. Gained first-hand exposure to the highest tier of the Indian Judicial System, translating theory into strict legal formalism.
+                                </p>
+                            </div>
+                            
+                            <!-- Item 2 -->
+                            <div class="group relative bg-[#14161a] border-y border-zinc-800 py-6 md:py-8 hover:bg-[#1a1c23] transition-all duration-300 interactive-element px-4 md:px-8" style="animation-delay: 100ms;">
+                                <div class="absolute left-0 top-0 w-1 h-full bg-zinc-800 group-hover:bg-archival-ink transition-colors"></div>
+
+                                <div class="flex flex-col md:flex-row md:justify-between md:items-start mb-4 gap-4 relative z-10">
+                                    <div>
+                                        <h3 class="text-xl md:text-2xl font-serif font-bold text-zinc-100 group-hover:text-amber-500 transition-colors flex items-center gap-3">
+                                            <i class="ph ph-microphone-stage text-amber-700/50"></i> Participant & Debater
+                                        </h3>
+                                        <p class="text-zinc-400 font-mono text-xs mt-2 uppercase tracking-widest flex items-center gap-2">
+                                            National Moot Court Competition
+                                        </p>
+                                    </div>
+                                    <div class="flex items-center gap-2 border border-dashed border-zinc-600 bg-zinc-900/50 px-3 py-1 self-start md:self-auto">
+                                        <span class="text-[10px] font-mono text-zinc-400 uppercase tracking-widest whitespace-nowrap">Status: Verified</span>
+                                    </div>
+                                </div>
+                                <p class="mt-4 leading-relaxed text-zinc-400 relative z-10 text-sm md:text-base font-serif">
+                                    Drafted comprehensive legal memorials conforming to stringent court formatting. Delivered sharp, logical oral arguments before judging panels. Demonstrated exceptional command over legal vernacular and tactical debate pacing.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- MARKSMAN TAB -->
+                    <div id="tab-content-marksman" class="tab-content">
+                        <div class="flex items-center gap-4 mb-8">
+                            <h2 class="text-2xl md:text-3xl font-serif font-black text-zinc-100 uppercase tracking-tight border-b-2 border-archival-ink pb-2">Physical & Mental Conditioning</h2>
+                        </div>
+                        <div class="space-y-8">
+                            <!-- Item 1 -->
+                            <div class="group relative bg-[#14161a] border-y border-zinc-800 py-6 md:py-8 hover:bg-[#1a1c23] transition-all duration-300 interactive-element px-4 md:px-8">
+                                <div class="absolute left-0 top-0 w-1 h-full bg-zinc-800 group-hover:bg-archival-ink transition-colors"></div>
+
+                                <div class="flex flex-col md:flex-row md:justify-between md:items-start mb-4 gap-4 relative z-10">
+                                    <div>
+                                        <h3 class="text-xl md:text-2xl font-serif font-bold text-zinc-100 group-hover:text-amber-500 transition-colors flex items-center gap-3">
+                                            <i class="ph ph-target text-red-800/50"></i> Professional Athlete
+                                        </h3>
+                                        <p class="text-zinc-400 font-mono text-xs mt-2 uppercase tracking-widest flex items-center gap-2">
+                                            10m Air Pistol Shooting
+                                        </p>
+                                    </div>
+                                    <div class="flex items-center gap-2 border border-dashed border-zinc-600 bg-zinc-900/50 px-3 py-1 self-start md:self-auto">
+                                        <div class="w-1.5 h-1.5 rounded-full bg-archival-ink animate-pulse"></div>
+                                        <span class="text-[10px] font-mono text-zinc-400 uppercase tracking-widest whitespace-nowrap">Active Pursuit</span>
+                                    </div>
+                                </div>
+                                <p class="mt-4 leading-relaxed text-zinc-400 relative z-10 text-sm md:text-base font-serif">
+                                    Cultivating elite-level concentration, mental fortitude, and precision. The ability to block out external noise directly translates to the hyper-focus required for intensive constitutional research and courtroom presence.
+                                </p>
+                            </div>
+
+                            <!-- Item 2 -->
+                            <div class="group relative bg-[#14161a] border-y border-zinc-800 py-6 md:py-8 hover:bg-[#1a1c23] transition-all duration-300 interactive-element px-4 md:px-8" style="animation-delay: 100ms;">
+                                <div class="absolute left-0 top-0 w-1 h-full bg-zinc-800 group-hover:bg-archival-ink transition-colors"></div>
+
+                                <div class="flex flex-col md:flex-row md:justify-between md:items-start mb-4 gap-4 relative z-10">
+                                    <div>
+                                        <h3 class="text-xl md:text-2xl font-serif font-bold text-zinc-100 group-hover:text-amber-500 transition-colors flex items-center gap-3">
+                                            <i class="ph ph-person-simple-throw text-red-800/50"></i> Martial Artist
+                                        </h3>
+                                        <p class="text-zinc-400 font-mono text-xs mt-2 uppercase tracking-widest flex items-center gap-2">
+                                            Judo (2 Years)
+                                        </p>
+                                    </div>
+                                    <div class="flex items-center gap-2 border border-dashed border-zinc-600 bg-zinc-900/50 px-3 py-1 self-start md:self-auto">
+                                        <span class="text-[10px] font-mono text-zinc-400 uppercase tracking-widest whitespace-nowrap">Archived</span>
+                                    </div>
+                                </div>
+                                <p class="mt-4 leading-relaxed text-zinc-400 relative z-10 text-sm md:text-base font-serif">
+                                    Underwent rigorous physical and mental conditioning. Developed unparalleled discipline, resilience, and strategic combat thinking to outmaneuver opponents, skills highly translatable to litigation.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- STRATEGY TAB -->
+                    <div id="tab-content-strategy" class="tab-content">
+                        <div class="flex items-center gap-4 mb-8">
+                            <h2 class="text-2xl md:text-3xl font-serif font-black text-zinc-100 uppercase tracking-tight border-b-2 border-archival-ink pb-2">Intelligence & Networking</h2>
+                        </div>
+                        <div class="space-y-8">
+                            <!-- Item 1 -->
+                            <div class="group relative bg-[#14161a] border-y border-zinc-800 py-6 md:py-8 hover:bg-[#1a1c23] transition-all duration-300 interactive-element px-4 md:px-8">
+                                <div class="absolute left-0 top-0 w-1 h-full bg-zinc-800 group-hover:bg-archival-ink transition-colors"></div>
+
+                                <div class="flex flex-col md:flex-row md:justify-between md:items-start mb-4 gap-4 relative z-10">
+                                    <div>
+                                        <h3 class="text-xl md:text-2xl font-serif font-bold text-zinc-100 group-hover:text-amber-500 transition-colors flex items-center gap-3">
+                                            <i class="ph ph-users-three text-yellow-700/50"></i> Summit Delegate
+                                        </h3>
+                                        <p class="text-zinc-400 font-mono text-xs mt-2 uppercase tracking-widest flex items-center gap-2">
+                                            AI Impact Summit 2026
+                                        </p>
+                                    </div>
+                                    <div class="flex items-center gap-2 border border-dashed border-zinc-600 bg-zinc-900/50 px-3 py-1 self-start md:self-auto">
+                                        <span class="text-[10px] font-mono text-zinc-400 uppercase tracking-widest whitespace-nowrap">Date: Feb 2026</span>
+                                    </div>
+                                </div>
+                                <p class="mt-4 leading-relaxed text-zinc-400 relative z-10 text-sm md:text-base font-serif">
+                                    Navigated the intersection of future technology and legal frameworks. Enhanced high-level networking skills, confidently engaging with industry leaders, visionaries, and policymakers.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </main>
+
+        <footer class="fixed bottom-0 w-full border-t border-zinc-800 bg-[#0c0d10]/95 backdrop-blur-md text-[9px] sm:text-[10px] font-mono text-zinc-500 py-3 px-4 md:px-6 flex justify-between items-center z-20 shadow-[0_-5px_20px_rgba(0,0,0,0.5)]">
+            <div class="flex items-center gap-4">
+                <div class="flex items-center gap-2">
+                    ARCHIVE.STAT: 
+                    <span class="text-green-600 border border-green-800/50 px-2 py-0.5 bg-green-900/10 uppercase tracking-widest">Connected</span>
+                </div>
+                <div class="hidden md:flex items-center gap-2" id="coord-display">
+                    LAT: 0 LNG: 0
+                </div>
+            </div>
+            <div class="flex items-center gap-2 md:gap-4">
+                <span class="hidden md:inline hover:text-archival-ink transition-colors cursor-pointer interactive-element tracking-widest uppercase">Subj: Cheshta Saluja</span>
+                <span class="hidden sm:inline text-zinc-800">|</span>
+                <span class="text-zinc-400 flex items-center gap-2 border border-zinc-700 px-2 md:px-3 py-1 bg-[#14161a] cursor-pointer interactive-element whitespace-nowrap tracking-widest"> 
+                    <i class="ph ph-stamp text-zinc-500"></i> ACWL '29
+                </span>
+            </div>
+        </footer>
+    </div>
+
     <script>
-        function switchPage(pageId) {
-            const homePage = document.getElementById('home-page');
-            const shopPage = document.getElementById('shop-page');
-            
-            if(pageId === 'shop') {
-                homePage.classList.remove('block');
-                homePage.classList.add('hidden');
+        // State Variables
+        let isBooting = true;
+        let focusMode = false;
+        let mouseX = 0, mouseY = 0;
+        
+        // Data Configuration
+        const skillsData = [
+            { name: "Constitutional Law", val: 95 },
+            { name: "Persuasive Debating", val: 98 },
+            { name: "Fluent English", val: 100 },
+            { name: "Under-Pressure Focus", val: 100 },
+            { name: "Legal Drafting", val: 90 }
+        ];
+
+        // 1. Boot Sequence Logic
+        const bootSequence = [
+            "ESTABLISHING SECURE CONNECTION...",
+            "RETRIEVING ARCHIVE FILES...",
+            "DECRYPTING ACWL DATABASES...",
+            "CALIBRATING SCALES OF JUSTICE...",
+            "LOADING 10MM BALLISTICS PROFILES...",
+            "CROSS-REFERENCING SUPREME COURT RECORDS...",
+            "DOSSIER LOCATED.",
+            "UNSEALING FILE..."
+        ];
+        
+        const bootContainer = document.getElementById('boot-text-container');
+        let bootStep = 0;
+
+        function renderBootText() {
+            if (bootStep < bootSequence.length) {
+                const text = bootSequence[bootStep];
+                const isLast = bootStep === bootSequence.length - 1;
+                // Fake a formal date stamp
+                const date = new Date().toISOString().split('T')[0];
+                const time = new Date().toISOString().split('T')[1].slice(0,8);
                 
-                shopPage.classList.remove('hidden');
-                shopPage.classList.add('block');
-                
-                window.scrollTo({ top: 0, behavior: 'smooth' });
+                const div = document.createElement('div');
+                div.className = 'flex items-center gap-3 text-xs md:text-sm font-mono animate-fadeIn';
+                div.innerHTML = `
+                    <span class="text-zinc-600">[${date} ${time}]</span>
+                    <span class="${isLast ? 'text-green-500 font-bold' : 'text-amber-600/80'}">${text}</span>
+                `;
+                bootContainer.appendChild(div);
+                bootStep++;
             } else {
-                shopPage.classList.remove('block');
-                shopPage.classList.add('hidden');
-                
-                homePage.classList.remove('hidden');
-                homePage.classList.add('block');
+                clearInterval(bootInterval);
+                setTimeout(() => {
+                    isBooting = false;
+                    document.getElementById('boot-screen').style.opacity = '0';
+                    setTimeout(() => document.getElementById('boot-screen').style.display = 'none', 1000);
+                    const mainApp = document.getElementById('main-app');
+                    mainApp.classList.remove('opacity-0', 'pointer-events-none');
+                    mainApp.classList.add('opacity-100');
+                    initParallax();
+                }, 800);
             }
+        }
+        const bootInterval = setInterval(renderBootText, 350);
+
+        let skillsDecrypted = false;
+        const skillsContainer = document.getElementById('skills-container');
+        
+        skillsData.forEach(skill => {
+            const skillDiv = document.createElement('div');
+            skillDiv.className = 'relative group cursor-none skill-row';
             
-            // Close mobile menu if open
-            const mobileMenu = document.getElementById('mobile-menu');
-            if(mobileMenu) {
-                mobileMenu.classList.add('hidden');
-                mobileMenu.classList.remove('flex');
+            const valStr = skill.val === 100 ? "CONFIRMED" : skill.val.toString() + "%";
+            const segments = Array.from({length: 10}, (_, i) => {
+                const isActive = i < skill.val / 10;
+                return `<div class="flex-1 border-y border-r first:border-l skill-segment ${isActive ? 'bg-zinc-700 border-zinc-600 active-segment' : 'bg-zinc-900 border-zinc-800'}" style="transition-delay: ${i * 20}ms; height: 8px;"></div>`;
+            }).join('');
+
+            skillDiv.innerHTML = `
+                <div class="flex justify-between text-[10px] font-mono mb-1.5 uppercase tracking-wider skill-header">
+                    <span class="text-zinc-500 name-span transition-colors duration-300">${skill.name}</span>
+                    <span class="text-zinc-600 val-span transition-colors duration-300">${valStr}</span>
+                </div>
+                <div class="flex h-2 segments-container">
+                    ${segments}
+                </div>
+                <div class="absolute top-1/2 -right-12 w-screen h-px bg-archival-ink/40 z-[-1] pointer-events-none opacity-0 transition-opacity duration-300 laser-line"></div>
+            `;
+
+            skillDiv.addEventListener('mouseenter', () => {
+                if (!skillsDecrypted) activateSkillRow(skillDiv);
+            });
+
+            skillDiv.addEventListener('mouseleave', () => {
+                if (!skillsDecrypted) deactivateSkillRow(skillDiv);
+            });
+
+            skillsContainer.appendChild(skillDiv);
+        });
+
+        // Activation Helper Functions
+        function activateSkillRow(skillDiv) {
+            skillDiv.querySelector('.name-span').classList.replace('text-zinc-500', 'text-red-400');
+            skillDiv.querySelector('.val-span').classList.replace('text-zinc-600', 'text-red-400');
+            skillDiv.querySelector('.laser-line').classList.replace('opacity-0', 'opacity-100');
+            
+            skillDiv.querySelectorAll('.active-segment').forEach(seg => {
+                seg.classList.replace('bg-zinc-700', 'bg-archival-ink');
+                seg.classList.replace('border-zinc-600', 'border-red-800');
+            });
+        }
+
+        function deactivateSkillRow(skillDiv) {
+            skillDiv.querySelector('.name-span').classList.replace('text-red-400', 'text-zinc-500');
+            skillDiv.querySelector('.val-span').classList.replace('text-red-400', 'text-zinc-600');
+            skillDiv.querySelector('.laser-line').classList.replace('opacity-100', 'opacity-0');
+            
+            skillDiv.querySelectorAll('.active-segment').forEach(seg => {
+                seg.classList.replace('bg-archival-ink', 'bg-zinc-700');
+                seg.classList.replace('border-red-800', 'border-zinc-600');
+            });
+        }
+
+        window.toggleAllSkills = function() {
+            skillsDecrypted = !skillsDecrypted;
+            const btn = document.getElementById('decrypt-btn');
+            const icon = document.getElementById('decrypt-icon');
+            const text = document.getElementById('decrypt-text');
+            
+            if (skillsDecrypted) {
+                btn.classList.remove('animate-pulse-glow');
+                btn.style.boxShadow = '0 0 10px rgba(185,28,28,0.3)';
+                
+                btn.classList.replace('text-red-400', 'text-red-200');
+                btn.classList.replace('bg-red-900/10', 'bg-archival-ink/80');
+                
+                icon.className = 'ph ph-lock-open';
+                text.innerText = 'OVERRIDDEN';
+                
+                document.querySelectorAll('.skill-row').forEach(row => activateSkillRow(row));
+            } else {
+                btn.classList.add('animate-pulse-glow');
+                btn.style.boxShadow = '';
+                
+                btn.classList.replace('text-red-200', 'text-red-400');
+                btn.classList.replace('bg-archival-ink/80', 'bg-red-900/10');
+                
+                icon.className = 'ph ph-lock-key';
+                text.innerText = 'Override';
+                
+                document.querySelectorAll('.skill-row').forEach(row => deactivateSkillRow(row));
+            }
+        };
+
+        // Redacted text revelation
+        document.addEventListener('click', (e) => {
+            if (e.target.classList.contains('redacted')) {
+                e.target.classList.add('revealed');
+                
+                const impactsContainer = document.getElementById('impacts-container');
+                const text = document.createElement('div');
+                text.className = 'fixed pointer-events-none z-50 text-[10px] font-mono text-amber-500 animate-slide-up bg-black/80 px-1 border border-amber-900';
+                text.style.left = `${e.clientX + 10}px`;
+                text.style.top = `${e.clientY - 10}px`;
+                text.innerText = "DATA UNSEALED";
+                impactsContainer.appendChild(text);
+                
+                setTimeout(() => text.remove(), 1200);
+            }
+        });
+
+        function initParallax() {
+            const bg = document.getElementById('parallax-bg');
+            for(let i=0; i<8; i++) {
+                const icon = document.createElement('i');
+                // Mix of scales and seals floating in background
+                icon.className = i % 2 === 0 ? 'ph ph-scales text-[10rem] md:text-[20rem] text-zinc-800/10' : 'ph ph-seal-check text-[10rem] md:text-[20rem] text-zinc-800/10';
+                bg.appendChild(icon);
             }
         }
 
-        // Navbar scroll effect
-        const navbar = document.getElementById('navbar');
-        window.addEventListener('scroll', () => {
-            if (window.scrollY > 50) {
-                navbar.classList.add('glass-panel', 'border-b', 'border-white/10', 'py-3');
-                navbar.classList.remove('py-4');
+        const cursorPrimary = document.getElementById('cursor-primary');
+        const cursorLaser = document.getElementById('cursor-laser');
+        const coordDisplay = document.getElementById('coord-display');
+        const parallaxBg = document.getElementById('parallax-bg');
+
+        // Mouse tracking for custom crosshair
+        document.addEventListener('mousemove', (e) => {
+            if(isBooting) return;
+            
+            mouseX = e.clientX;
+            mouseY = e.clientY;
+
+            cursorPrimary.style.left = `${mouseX}px`;
+            cursorPrimary.style.top = `${mouseY}px`;
+
+            setTimeout(() => {
+                cursorLaser.style.left = `${mouseX}px`;
+                cursorLaser.style.top = `${mouseY}px`;
+            }, 60);
+
+            if(coordDisplay) coordDisplay.innerText = `LAT: ${(mouseX * 0.01).toFixed(2)} LNG: ${(mouseY * 0.01).toFixed(2)}`;
+
+            const moveX = (mouseX - window.innerWidth / 2) * -0.01;
+            const moveY = (mouseY - window.innerHeight / 2) * -0.01;
+            parallaxBg.style.transform = `translate(${moveX}px, ${moveY}px)`;
+
+            const target = e.target;
+            const isClickable = window.getComputedStyle(target).cursor === 'pointer' || 
+                                target.tagName.toLowerCase() === 'button' ||
+                                target.closest('button') !== null ||
+                                target.classList.contains('interactive-element') ||
+                                target.closest('.interactive-element') !== null;
+            
+            if (isClickable) {
+                cursorPrimary.style.transform = 'translate(-50%, -50%) scale(1.3) rotate(45deg)';
+                cursorPrimary.style.opacity = '0.5';
             } else {
-                navbar.classList.remove('glass-panel', 'border-b', 'border-white/10', 'py-3');
-                navbar.classList.add('py-4');
+                cursorPrimary.style.transform = 'translate(-50%, -50%) scale(1) rotate(0deg)';
+                cursorPrimary.style.opacity = '0.8';
             }
         });
 
-        // Mobile Menu Toggle
-        const mobileBtn = document.getElementById('mobile-menu-btn');
-        const mobileMenu = document.getElementById('mobile-menu');
-        const mobileLinks = document.querySelectorAll('.mobile-link');
+        // Global Click Impacts (Bullet/Gavel strikes)
+        document.addEventListener('click', (e) => {
+            if(isBooting) return;
 
-        mobileBtn.addEventListener('click', () => {
-            mobileMenu.classList.toggle('hidden');
-            mobileMenu.classList.toggle('flex');
-        });
+            const impactsContainer = document.getElementById('impacts-container');
+            const rot = Math.random() * 360;
 
-        mobileLinks.forEach(link => {
-            link.addEventListener('click', () => {
-                mobileMenu.classList.add('hidden');
-                mobileMenu.classList.remove('flex');
-            });
-        });
+            const impactWrapper = document.createElement('div');
+            impactWrapper.className = 'fixed pointer-events-none z-40';
+            impactWrapper.style.left = `${e.clientX}px`;
+            impactWrapper.style.top = `${e.clientY}px`;
+            impactWrapper.style.transform = `translate(-50%, -50%) rotate(${rot}deg)`;
 
-        // Intersection Observer for scroll animations (fade in)
-        const observerOptions = {
-            root: null,
-            rootMargin: '0px',
-            threshold: 0.15
-        };
-
-        const observer = new IntersectionObserver((entries, observer) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('visible');
-                    observer.unobserve(entry.target); // Run once
-                }
-            });
-        }, observerOptions);
-
-        document.querySelectorAll('.fade-in-element').forEach(el => {
-            observer.observe(el);
-        });
-
-        // WhatsApp Base Number (replace with actual number)
-        const WHATSAPP_NUMBER = "917009977257"; // Include country code, no + or spaces
-
-        // Modality Data for Modals
-        const modalityData = {
-            timeline: {
-                title: "Timeline Trauma Healing",
-                icon: "ph-clock-counter-clockwise",
-                whatsappMessage: "Hello Captain Poonam, I would like to book a Timeline Trauma Healing session to heal my emotional responses across my timeline.",
-                content: `
-                    <div class="mb-8">
-                        <h4 class="text-gold-400 font-serif text-2xl mb-4 border-b border-white/10 pb-2">What it is</h4>
-                        <p class="text-gray-300 leading-relaxed text-lg">Trauma is an emotional response to a terrible event—such as an accident, rape, or natural disaster. While shock and denial are common immediate reactions, long-term effects can include unpredictable emotions, flashbacks, strained relationships, and physical symptoms like headaches or nausea.</p>
-                    </div>
-                    <div>
-                        <h4 class="text-gold-400 font-serif text-2xl mb-4 border-b border-white/10 pb-2">The Deep Dive</h4>
-                        <p class="text-gray-300 leading-relaxed text-lg">Every trauma has a timeline marking its beginning. To truly rid the body and mind of trauma symptoms, it is extremely important to catch the root cause. Our experts dig deeper to find the exact origin of the trauma, allowing you to heal across your entire timeline completely.</p>
-                    </div>
-                `
-            },
-            relationship: {
-                title: "Relationship Healing",
-                icon: "ph-users",
-                whatsappMessage: "Hello Captain Poonam, I am interested in a Relationship Healing session to help break toxic dynamics and build a foundation of peace.",
-                content: `
-                    <div>
-                        <h4 class="text-gold-400 font-serif text-2xl mb-4 border-b border-white/10 pb-2">Relationship Healing</h4>
-                        <p class="text-gray-300 leading-relaxed text-lg">Most relationship struggles begin with a dysfunctional family dynamic. The biggest trauma in romantic partnerships is often the "narcissist and codependent" dynamic, which can include physical, mental, emotional, and spiritual abuse, followed by lying, controlling, and manipulating. We help you identify and break the patterns keeping you stuck in these endless abusive cycles so you can build a foundation of peace and love.</p>
-                    </div>
-                `
-            },
-            twinflame: {
-                title: "Twin Flame Healing",
-                icon: "ph-fire",
-                whatsappMessage: "Hello Captain Poonam, I would like to book a Twin Flame Healing session to navigate the mirroring dynamics and heal the runner/chaser cycle.",
-                content: `
-                    <div>
-                        <h4 class="text-gold-400 font-serif text-2xl mb-4 border-b border-white/10 pb-2">Twin Flame Healing</h4>
-                        <p class="text-gray-300 leading-relaxed text-lg">A "twin flame" is an intense soul connection with a "mirror soul"—based on the idea that one soul gets split into two bodies. These relationships are highly challenging because they mirror your deepest insecurities, fears, and shadows. We help heal the painful "runner and chaser" dynamic, requiring deep self-love and healing on both ends, so you can reach your full potential and unite in a permanent, harmonious physical union on this 3D plane.</p>
-                    </div>
-                `
-            },
-            womb: {
-                title: "Sacred Womb Healing",
-                icon: "ph-flower-lotus",
-                whatsappMessage: "Hello Captain Poonam, I want to book a Sacred Womb Healing session to release emotional blockages and tap into my feminine essence.",
-                content: `
-                    <div>
-                        <h4 class="text-gold-400 font-serif text-2xl mb-4 border-b border-white/10 pb-2">Sacred Womb Healing</h4>
-                        <p class="text-gray-300 leading-relaxed text-lg">The womb is where most of our traumas are stored, obstructing the flow of energy. Womb healing honors your feminine space and releases emotional blockages surrounding the loss of a baby, such as miscarriages, abortions, and stillbirths. By clearing these traumas, you tap into infinite potential for creativity, pleasure, and happiness, making space to birth a "new you".</p>
-                    </div>
-                `
-            },
-            sexualtrauma: {
-                title: "Sexual Trauma Healing",
-                icon: "ph-hands-praying",
-                whatsappMessage: "Hello Captain Poonam, I would like to discuss booking a Sexual Trauma Healing session to reduce physical trauma responses and restore my power.",
-                content: `
-                    <div>
-                        <h4 class="text-gold-400 font-serif text-2xl mb-4 border-b border-white/10 pb-2">Sexual Trauma Healing</h4>
-                        <p class="text-gray-300 leading-relaxed text-lg">Sexual trauma comes from exposure to sexually inappropriate behaviors without consent, causing immense stress. This includes assault, harassment, stalking, childhood or familial abuse, and sex trafficking. Healing these deep-rooted traumas reduces physical trauma responses, improves mental health, increases self-esteem, and restores a profound sense of empowerment.</p>
-                    </div>
-                `
-            },
-            ancestral: {
-                title: "Ancestral Healing",
-                icon: "ph-tree-evergreen",
-                whatsappMessage: "Hello Captain Poonam, I am interested in an Ancestral Healing session to lift inherited traumas and break generational cycles.",
-                content: `
-                    <div class="mb-8">
-                        <h4 class="text-gold-400 font-serif text-2xl mb-4 border-b border-white/10 pb-2">What it is</h4>
-                        <p class="text-gray-300 leading-relaxed text-lg">Ancestral traumas are the unworked legacies, unresolved stories, secrets, and resentments of those who have died. These wounds run through families until someone heals them.</p>
-                    </div>
-                    <div>
-                        <h4 class="text-gold-400 font-serif text-2xl mb-4 border-b border-white/10 pb-2">The Deep Dive</h4>
-                        <p class="text-gray-300 leading-relaxed text-lg">Unhealed generational trauma can manifest as emotionally numb families, severe trust issues, over-protectiveness without a real threat, or unhealthy relationship boundaries. We help identify these repeating patterns and create new ones, lifting traumas and curses from your entire family lineage. This breaks the cycle of death and rebirth, allowing you and future generations to live stress-free.</p>
-                    </div>
-                `
-            },
-            spiritual: {
-                title: "Spiritual Awakening",
-                icon: "ph-sparkle",
-                whatsappMessage: "Hello Captain Poonam, I am experiencing a Spiritual Awakening and need guidance to navigate this profound paradigm shift safely.",
-                content: `
-                    <div>
-                        <h4 class="text-gold-400 font-serif text-2xl mb-4 border-b border-white/10 pb-2">Spiritual Awakening</h4>
-                        <p class="text-gray-300 leading-relaxed text-lg">A spiritual awakening is a profound shift in consciousness (a paradigm shift) that reveals the interconnectedness of all things. This process is often highly painful and unsettling because you wake up to a complex, unconventional reality that the mind struggles to grasp. We provide a structured approach and powerful tools to help you release this pain with ease and navigate enlightenment safely.</p>
-                    </div>
-                `
-            },
-            soulrebirthing: {
-                title: "Soul Rebirthing",
-                icon: "ph-bird",
-                whatsappMessage: "Hello Captain Poonam, I would like to book a Soul Rebirthing session to integrate the lost fragments of my soul.",
-                content: `
-                    <div>
-                        <h4 class="text-gold-400 font-serif text-2xl mb-4 border-b border-white/10 pb-2">Soul Rebirthing</h4>
-                        <p class="text-gray-300 leading-relaxed text-lg">Throughout life, our soul becomes fragmented due to various traumatic experiences. Soul rebirthing integrates these lost fragments so you can become whole and complete again. We help you call your power back and remember who you truly are and what you are truly capable of.</p>
-                    </div>
-                `
-            },
-            career: {
-                title: "Career & Abundance",
-                icon: "ph-star-four",
-                whatsappMessage: "Hello Captain Poonam, I want to book a Career & Abundance session to identify and remove energetic blockages hindering my financial freedom.",
-                content: `
-                    <div>
-                        <h4 class="text-gold-400 font-serif text-2xl mb-4 border-b border-white/10 pb-2">The Deep Dive</h4>
-                        <p class="text-gray-300 leading-relaxed text-lg">Most of our lives are built on a need for security, making our careers and financial freedom vital to our satisfaction. However, unseen interference from negative energies can create severe blockages that stop you from achieving your dreams. We help identify and remove these underlying energetic blockages using professional techniques, opening the gates of abundance to create a solid, stable base for your life.</p>
-                    </div>
-                `
-            },
-            energy: {
-                title: "Health & Chakras",
-                icon: "ph-person-simple-meditate",
-                whatsappMessage: "Hello Captain Poonam, I am interested in a Health and Chakra healing session to balance my energy centers and heal my emotional body.",
-                content: `
-                    <div class="mb-8">
-                        <h4 class="text-gold-400 font-serif text-2xl mb-4 border-b border-white/10 pb-2">Health and Emotional Body</h4>
-                        <p class="text-gray-300 leading-relaxed text-lg">Our physical body is the home of our soul and a divine vessel; if we lose our health, we lose the ability to complete our earthly mission. Diseases always appear in our emotional body before they manifest in our physical body. By healing your emotional body, physical dis-eases are automatically removed.</p>
-                    </div>
-                    <div class="mb-8">
-                        <h4 class="text-gold-400 font-serif text-2xl mb-4 border-b border-white/10 pb-2">Chakra Healing</h4>
-                        <p class="text-gray-300 leading-relaxed text-lg">Chakras are the 7 major energy centers in the body. When energy flow is obstructed, it manifests as health issues, financial losses, and relationship problems. We help locate and clear these blockages to restart the flow of divine energy.</p>
-                    </div>
-                `
-            }
-        };
-
-        // Modal Elements
-        const modal = document.getElementById('detail-modal');
-        const modalBackdrop = document.getElementById('modal-backdrop');
-        const modalContent = document.getElementById('modal-content-container');
-        const closeModalBtn = document.getElementById('close-modal');
-        const modalBody = document.getElementById('modal-body');
-        const modalTriggers = document.querySelectorAll('.modal-trigger');
-
-        // Open Modal Function
-        function openModal(modalityKey) {
-            const data = modalityData[modalityKey];
-            if(!data) return;
-
-            const whatsappUrl = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(data.whatsappMessage)}`;
-
-            // Construct Inner HTML
-            modalBody.innerHTML = `
-                <div class="flex items-center gap-4 mb-8">
-                    <div class="w-16 h-16 rounded-full bg-deep-800 border border-gold-400/50 flex items-center justify-center text-gold-400 shrink-0 shadow-[0_0_20px_rgba(212,175,55,0.2)]">
-                        <i class="ph ${data.icon} text-3xl"></i>
-                    </div>
-                    <h2 class="font-serif text-3xl md:text-4xl font-bold text-white">${data.title}</h2>
-                </div>
-                <div class="space-y-6">
-                    ${data.content}
-                </div>
-                <div class="mt-8 pt-8 border-t border-white/10 text-center sm:text-left flex flex-col sm:flex-row gap-4">
-                    <a href="${whatsappUrl}" target="_blank" onclick="closeModal()" class="inline-flex items-center justify-center gap-2 px-8 py-4 bg-[#25D366] text-white font-bold uppercase tracking-wider rounded-sm hover:bg-[#1ebd5b] transition-colors duration-300 shadow-[0_0_15px_rgba(37,211,102,0.4)]">
-                        <i class="ph-fill ph-whatsapp-logo text-2xl"></i> Book via WhatsApp
-                    </a>
-                    <button onclick="closeModal()" class="px-8 py-4 border border-white/20 text-gray-300 font-medium uppercase tracking-wider rounded-sm hover:bg-white/5 transition-colors">
-                        Close
-                    </button>
+            impactWrapper.innerHTML = `
+                <div class="absolute inset-0 bg-amber-600 rounded-full animate-flash blur-[2px]"></div>
+                <div class="w-5 h-5 bg-[#050505] rounded-full border border-zinc-800 relative animate-fade-out mix-blend-multiply">
+                    <div class="absolute inset-0 border-t border-r border-zinc-700 rounded-full transform rotate-45 scale-110"></div>
                 </div>
             `;
 
-            // Display elements
-            modal.classList.remove('hidden');
-            modal.classList.add('flex');
-            
-            // Trigger animations
-            setTimeout(() => {
-                modal.classList.remove('opacity-0');
-                modalContent.classList.remove('scale-95');
-                modalContent.classList.add('scale-100');
-            }, 10);
-            
-            // Prevent body scroll
-            document.body.style.overflow = 'hidden';
-        }
-
-        // Close Modal Function
-        function closeModal() {
-            modal.classList.add('opacity-0');
-            modalContent.classList.remove('scale-100');
-            modalContent.classList.add('scale-95');
-            
-            setTimeout(() => {
-                modal.classList.add('hidden');
-                modal.classList.remove('flex');
-                document.body.style.overflow = ''; // Restore scroll
-            }, 300); // Matches duration-300 class
-        }
-
-        // Event Listeners
-        modalTriggers.forEach(btn => {
-            btn.addEventListener('click', (e) => {
-                const modalityKey = e.currentTarget.getAttribute('data-modality');
-                openModal(modalityKey);
-            });
+            impactsContainer.appendChild(impactWrapper);
+            setTimeout(() => impactWrapper.remove(), 2000);
         });
 
-        closeModalBtn.addEventListener('click', closeModal);
-        modalBackdrop.addEventListener('click', closeModal);
-
-        // Escape key to close
-        document.addEventListener('keydown', (e) => {
-            if (e.key === 'Escape' && !modal.classList.contains('hidden')) {
-                closeModal();
-            }
-        });
-
-        // Initialize Floating Healing Orbs
-        function initHealingOrbs() {
-            const container = document.getElementById('healing-orbs-container');
-            if(!container) return;
-            
-            const orbCount = 20; // Number of floating lights
-            
-            for(let i = 0; i < orbCount; i++) {
-                let orb = document.createElement('div');
-                orb.className = 'healing-orb';
+        window.switchTab = function(tabId) {
+            ['legal', 'marksman', 'strategy'].forEach(id => {
+                const btn = document.getElementById(`tab-btn-${id}`);
+                const icon = btn.querySelector('.tab-icon');
+                // The Safe, fixed selector using .font-mono class instead of brackets
+                const label = btn.querySelector('span.font-mono');
                 
-                // Randomize position, size, and animation timing
-                orb.style.left = Math.random() * 100 + '%';
-                let size = Math.random() * 80 + 40; // Between 40px and 120px
-                orb.style.width = size + 'px';
-                orb.style.height = size + 'px';
-                
-                orb.style.animationDuration = (Math.random() * 15 + 10) + 's'; // 10s to 25s
-                orb.style.animationDelay = (Math.random() * 10) + 's';
-                
-                // Randomly assign gold or purple tint
-                if(Math.random() > 0.5) {
-                    orb.style.background = 'radial-gradient(circle, rgba(139,92,246,0.2) 0%, rgba(212,175,55,0.05) 100%)';
-                }
-                
-                container.appendChild(orb);
-            }
-        }
-
-        // Run when DOM is fully loaded
-        document.addEventListener('DOMContentLoaded', initHealingOrbs);
-
-        // F.A.Q Accordion Logic
-        const faqBtns = document.querySelectorAll('.faq-btn');
-        faqBtns.forEach(btn => {
-            btn.addEventListener('click', () => {
-                const content = btn.nextElementSibling;
-                const icon = btn.querySelector('i');
-                const isOpen = content.style.maxHeight;
-
-                // Close all other FAQs
-                document.querySelectorAll('.faq-content').forEach(c => {
-                    c.style.maxHeight = null;
-                });
-                document.querySelectorAll('.faq-btn i').forEach(i => {
-                    i.style.transform = 'rotate(0deg)';
-                });
-
-                // Toggle current FAQ
-                if (!isOpen) {
-                    content.style.maxHeight = content.scrollHeight + "px";
-                    icon.style.transform = 'rotate(180deg)';
-                }
-            });
-        });
-
-        // 1. Custom Aura Cursor
-        const cursor = document.getElementById('aura-cursor');
-        const dot = document.getElementById('aura-dot');
-        let mouseX = window.innerWidth / 2;
-        let mouseY = window.innerHeight / 2;
-        let cursorX = mouseX;
-        let cursorY = mouseY;
-
-        window.addEventListener('mousemove', (e) => {
-            mouseX = e.clientX;
-            mouseY = e.clientY;
-            if(dot) {
-                dot.style.left = mouseX + 'px';
-                dot.style.top = mouseY + 'px';
-            }
-        });
-
-        // Smooth trailing effect for the aura ring
-        function animateCursor() {
-            if(cursor) {
-                let dx = mouseX - cursorX;
-                let dy = mouseY - cursorY;
-                cursorX += dx * 0.15; // lerp factor
-                cursorY += dy * 0.15;
-                cursor.style.left = cursorX + 'px';
-                cursor.style.top = cursorY + 'px';
-            }
-            requestAnimationFrame(animateCursor);
-        }
-        animateCursor();
-
-        // Hover effect on interactive elements
-        const interactiveElements = document.querySelectorAll('a, button, .modal-trigger');
-        interactiveElements.forEach(el => {
-            el.addEventListener('mouseenter', () => cursor?.classList.add('active'));
-            el.addEventListener('mouseleave', () => cursor?.classList.remove('active'));
-        });
-
-        // 2. 3D Card Tilt Effect
-        const cards = document.querySelectorAll('.card-glow');
-        cards.forEach(card => {
-            // Inject spotlight element
-            const spotlight = document.createElement('div');
-            spotlight.classList.add('absolute', 'inset-0', 'pointer-events-none', 'transition-opacity', 'duration-300', 'opacity-0');
-            spotlight.style.background = 'radial-gradient(600px circle at var(--mouse-x) var(--mouse-y), rgba(139, 92, 246, 0.15), transparent 40%)';
-            spotlight.style.zIndex = '0';
-            card.appendChild(spotlight);
-            
-            // Force existing children to sit above spotlight
-            Array.from(card.children).forEach(child => {
-                if(child !== spotlight) {
-                    child.style.position = 'relative';
-                    child.style.zIndex = '10';
+                if (id === tabId) {
+                    btn.className = "tab-btn interactive-element flex-1 py-3 px-4 text-[10px] md:text-xs font-bold tracking-widest uppercase flex flex-col justify-center items-start sm:items-center gap-1 transition-all duration-300 border-l-4 sm:border-l-0 sm:border-t-4 bg-[#14161a] border-archival-ink text-red-400 shadow-[inset_0_20px_20px_-20px_rgba(185,28,28,0.1)]";
+                    icon.classList.add('animate-bounce-subtle');
+                    label.className = "text-zinc-500 font-mono text-[9px]";
+                } else {
+                    btn.className = "tab-btn interactive-element flex-1 py-3 px-4 text-[10px] md:text-xs font-bold tracking-widest uppercase flex flex-col justify-center items-start sm:items-center gap-1 transition-all duration-300 border-l-4 sm:border-l-0 sm:border-t-4 bg-[#0c0d10] border-zinc-800 text-zinc-500 hover:text-zinc-300 hover:bg-[#14161a]";
+                    icon.classList.remove('animate-bounce-subtle');
+                    label.className = "text-zinc-600 font-mono text-[9px]";
                 }
             });
 
-            card.addEventListener('mousemove', (e) => {
-                const rect = card.getBoundingClientRect();
-                const x = e.clientX - rect.left;
-                const y = e.clientY - rect.top;
-                
-                // Update spotlight position
-                card.style.setProperty('--mouse-x', `${x}px`);
-                card.style.setProperty('--mouse-y', `${y}px`);
-                spotlight.classList.remove('opacity-0');
-                spotlight.classList.add('opacity-100');
-                
-                const centerX = rect.width / 2;
-                const centerY = rect.height / 2;
-                
-                const rotateX = ((y - centerY) / centerY) * -10; // Max rotation 10deg
-                const rotateY = ((x - centerX) / centerX) * 10;
-                
-                card.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) translateY(-5px) scale(1.02)`;
-                card.style.transition = 'none'; // remove transition for smooth tracking
+            document.querySelectorAll('.tab-content').forEach(content => {
+                content.classList.remove('active');
             });
             
-            card.addEventListener('mouseleave', () => {
-                spotlight.classList.remove('opacity-100');
-                spotlight.classList.add('opacity-0');
-                card.style.transform = `perspective(1000px) rotateX(0deg) rotateY(0deg) translateY(0px) scale(1)`;
-                card.style.transition = 'all 0.4s ease'; // restore transition
-            });
-        });
+            const activeContent = document.getElementById(`tab-content-${tabId}`);
+            void activeContent.offsetWidth; 
+            activeContent.classList.add('active');
+        };
 
-        // 3. Button Ripple Effect
-        const buttons = document.querySelectorAll('a, button');
-        buttons.forEach(btn => {
-            // Apply only to elements that look like buttons (have padding, bg, etc)
-            if(btn.classList.contains('px-8') || btn.classList.contains('px-6') || btn.classList.contains('px-5')) {
-                if(window.getComputedStyle(btn).position === 'static') {
-                    btn.style.position = 'relative';
-                }
-                btn.style.overflow = 'hidden';
+        window.toggleFocusMode = function(e) {
+            e.stopPropagation(); 
+            focusMode = !focusMode;
+
+            const body = document.getElementById('app-body');
+            const vignette = document.getElementById('focus-vignette');
+            const btn = document.getElementById('focus-btn');
+            const icon = document.getElementById('focus-icon');
+            const text = document.getElementById('focus-text');
+            const ampersand = document.getElementById('ampersand');
+
+            if (focusMode) {
+                body.classList.replace('bg-[#0c0d10]', 'bg-[#050505]');
+                vignette.classList.replace('opacity-0', 'opacity-100');
                 
-                btn.addEventListener('click', function(e) {
-                    const rect = btn.getBoundingClientRect();
-                    const x = e.clientX - rect.left;
-                    const y = e.clientY - rect.top;
-                    
-                    const circle = document.createElement('span');
-                    circle.classList.add('ripple');
-                    circle.style.left = x + 'px';
-                    circle.style.top = y + 'px';
-                    
-                    this.appendChild(circle);
-                    setTimeout(() => circle.remove(), 600);
-                });
-            }
-        });
-
-        // 4. Quantum Canvas Particles in Hero
-        const canvas = document.getElementById('quantum-canvas');
-        if(canvas) {
-            const ctx = canvas.getContext('2d');
-            let particlesArray = [];
-            
-            function resizeCanvas() {
-                canvas.width = window.innerWidth;
-                canvas.height = canvas.parentElement.clientHeight;
-            }
-            window.addEventListener('resize', resizeCanvas);
-            resizeCanvas();
-            
-            const mouse = {
-                x: null,
-                y: null,
-                radius: 150 // connection radius
-            }
-            
-            canvas.addEventListener('mousemove', function(event) {
-                // Adjust mouse coordinates relative to canvas
-                const rect = canvas.getBoundingClientRect();
-                mouse.x = event.clientX - rect.left;
-                mouse.y = event.clientY - rect.top;
-            });
-            
-            canvas.addEventListener('mouseleave', function() {
-                mouse.x = null;
-                mouse.y = null;
-            });
-            
-            class Particle {
-                constructor(x, y, directionX, directionY, size, color) {
-                    this.x = x;
-                    this.y = y;
-                    this.directionX = directionX;
-                    this.directionY = directionY;
-                    this.size = size;
-                    this.color = color;
-                    this.baseX = this.x;
-                    this.baseY = this.y;
-                    this.density = (Math.random() * 30) + 1;
-                }
-                draw() {
-                    ctx.beginPath();
-                    ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2, false);
-                    ctx.fillStyle = this.color;
-                    ctx.fill();
-                }
-                update() {
-                    // Check collision with mouse (repel effect)
-                    if(mouse.x != null && mouse.y != null) {
-                        let dx = mouse.x - this.x;
-                        let dy = mouse.y - this.y;
-                        let distance = Math.sqrt(dx*dx + dy*dy);
-                        let forceDirectionX = dx / distance;
-                        let forceDirectionY = dy / distance;
-                        
-                        const maxDistance = mouse.radius;
-                        let force = (maxDistance - distance) / maxDistance;
-                        if (force < 0) force = 0;
-                        
-                        let directionX = (forceDirectionX * force * this.density) * -0.6;
-                        let directionY = (forceDirectionY * force * this.density) * -0.6;
-                        
-                        if (distance < mouse.radius) {
-                            this.x += directionX;
-                            this.y += directionY;
-                        } else {
-                            if (this.x !== this.baseX) {
-                                let dx = this.x - this.baseX;
-                                this.x -= dx/10;
-                            }
-                            if (this.y !== this.baseY) {
-                                let dy = this.y - this.baseY;
-                                this.y -= dy/10;
-                            }
-                        }
-                    } else {
-                        if (this.x !== this.baseX) {
-                            let dx = this.x - this.baseX;
-                            this.x -= dx/10;
-                        }
-                        if (this.y !== this.baseY) {
-                            let dy = this.y - this.baseY;
-                            this.y -= dy/10;
-                        }
-                    }
-                    
-                    this.baseX += this.directionX;
-                    this.baseY += this.directionY;
-                    
-                    if(this.baseX < 0 || this.baseX > canvas.width) this.directionX = -this.directionX;
-                    if(this.baseY < 0 || this.baseY > canvas.height) this.directionY = -this.directionY;
-                    
-                    this.draw();
-                }
-            }
-            
-            function initParticles() {
-                particlesArray = [];
-                let numberOfParticles = (canvas.height * canvas.width) / 9000;
-                for (let i = 0; i < numberOfParticles; i++) {
-                    let size = (Math.random() * 2) + 1;
-                    let x = (Math.random() * ((canvas.width - size * 2) - (size * 2)) + size * 2);
-                    let y = (Math.random() * ((canvas.height - size * 2) - (size * 2)) + size * 2);
-                    let directionX = (Math.random() * 0.4) - 0.2;
-                    let directionY = (Math.random() * 0.4) - 0.2;
-                    let color = Math.random() > 0.5 ? 'rgba(212, 175, 55, 0.6)' : 'rgba(139, 92, 246, 0.6)';
-                    
-                    particlesArray.push(new Particle(x, y, directionX, directionY, size, color));
-                }
-            }
-            
-            function connect() {
-                let opacityValue = 1;
-                for (let a = 0; a < particlesArray.length; a++) {
-                    for (let b = a; b < particlesArray.length; b++) {
-                        let distance = ((particlesArray[a].x - particlesArray[b].x) * (particlesArray[a].x - particlesArray[b].x))
-                        + ((particlesArray[a].y - particlesArray[b].y) * (particlesArray[a].y - particlesArray[b].y));
-                        if (distance < (canvas.width/7) * (canvas.height/7)) {
-                            opacityValue = 1 - (distance/20000);
-                            ctx.strokeStyle = `rgba(212, 175, 55, ${opacityValue * 0.15})`;
-                            ctx.lineWidth = 1;
-                            ctx.beginPath();
-                            ctx.moveTo(particlesArray[a].x, particlesArray[a].y);
-                            ctx.lineTo(particlesArray[b].x, particlesArray[b].y);
-                            ctx.stroke();
-                        }
-                    }
-                }
-            }
-            
-            function animateParticles() {
-                requestAnimationFrame(animateParticles);
-                ctx.clearRect(0,0,innerWidth, innerHeight);
-                for (let i = 0; i < particlesArray.length; i++) {
-                    particlesArray[i].update();
-                }
-                connect();
-            }
-            
-            initParticles();
-            animateParticles();
-        }
-
-        // 5. Magnetic Buttons
-        const magneticElements = document.querySelectorAll('.magnetic');
-        magneticElements.forEach(el => {
-            el.addEventListener('mousemove', (e) => {
-                const rect = el.getBoundingClientRect();
-                const h = rect.width / 2;
-                const v = rect.height / 2;
-                const x = e.clientX - rect.left - h;
-                const y = e.clientY - rect.top - v;
+                btn.className = "relative group overflow-hidden flex items-center space-x-2 px-4 md:px-6 py-2 rounded-sm transition-all duration-300 border bg-red-900/20 text-red-400 border-archival-ink shadow-[0_0_20px_rgba(185,28,28,0.2)] interactive-element";
+                icon.classList.add('animate-spin-slow', 'text-red-500');
+                text.innerText = "Release Focus";
                 
-                el.style.transform = `translate(${x * 0.3}px, ${y * 0.3}px)`;
-            });
-            el.addEventListener('mouseleave', () => {
-                el.style.transform = `translate(0px, 0px)`;
-                el.style.transition = `transform 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275)`;
-            });
-            el.addEventListener('mouseenter', () => {
-                el.style.transition = `none`;
-            });
-        });
+                ampersand.className = "text-archival-ink drop-shadow-[0_0_15px_rgba(185,28,28,0.5)] transition-all duration-300 font-serif italic";
 
-        // 7. Scroll Energy Progress Bar
-        const scrollProgress = document.getElementById('scroll-progress');
-        window.addEventListener('scroll', () => {
-            if(scrollProgress) {
-                const totalScroll = document.documentElement.scrollTop || document.body.scrollTop;
-                const windowHeight = document.documentElement.scrollHeight - document.documentElement.clientHeight;
-                const scroll = `${(totalScroll / windowHeight) * 100}%`;
-                scrollProgress.style.height = scroll;
+            } else {
+                body.classList.replace('bg-[#050505]', 'bg-[#0c0d10]');
+                vignette.classList.replace('opacity-100', 'opacity-0');
+
+                btn.className = "relative group overflow-hidden flex items-center space-x-2 px-4 md:px-6 py-2 rounded-sm transition-all duration-300 border bg-zinc-900 text-zinc-400 border-zinc-700 hover:border-archival-ink hover:text-red-400 interactive-element";
+                icon.classList.remove('animate-spin-slow', 'text-red-500');
+                text.innerText = "Lock Focus";
+
+                ampersand.className = "text-zinc-600 transition-all duration-300 font-serif italic";
             }
-        });
+        };
 
     </script>
 </body>
